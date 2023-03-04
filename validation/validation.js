@@ -18,4 +18,15 @@ function isValidname(firstname){
     return result
 }
 
-module.exports = {validateEmail, validPassword,isValidMobile, isValidname }
+const isValidStatus = (size) => {
+    let status = ["pending", "completed", "canceled"];
+        if (status.includes(size)) {
+          return true
+        } else {
+          return false
+        }
+      }
+      const isValidObjectId = (objectId) => {
+        return mongoose.Types.ObjectId.isValid(objectId)
+    }
+module.exports = {validateEmail, validPassword,isValidMobile, isValidname ,isValidStatus,isValidObjectId}
