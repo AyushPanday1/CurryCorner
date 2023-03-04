@@ -10,16 +10,14 @@ router.post("/loginUser", loginUser)
 router.get("/user/:userId", getUser)
 router.put("/user", updateUser)
 
+
 router.post("/shop", createShop)
+
 router.put("/shop/:shopId", UpdateeShop)
 
 
 router.post("/product", createProduct)
 router.put("/product/:productId", updateProuct)
-
-
-
-
 
 router.post("/users/:userId/cart",createCart)
 
