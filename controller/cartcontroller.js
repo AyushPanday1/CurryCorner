@@ -164,10 +164,16 @@ let totalItemsInCart=cart.totalItems
 
 //===========================only 1 quantity deleteing from item list
 
-if(removeProduct==1  && editproduct.quantity>1){
+if(removeProduct==-1  && editproduct.quantity>1){
     editproduct.quantity=editproduct.quantity-1
    totalCartPrice=totalCartPrice-productPrice
    totalItemsInCart=totalItemsInCart-1
+}
+
+else if(removeProduct==1 ){
+    editproduct.quantity=editproduct.quantity+1
+   totalCartPrice=totalCartPrice+productPrice
+   totalItemsInCart=totalItemsInCart+1
 }
 //===========================deleting the whole item
 
