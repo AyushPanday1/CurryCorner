@@ -14,7 +14,7 @@ function isValidMobile(phone){
 }
 
 function isValidname(firstname){
-    let result = (typeof(firstname) == "string" && /^[a-zA-Z]+$/.test(firstname))?true:false
+    let result = (typeof(firstname) == "string" && /^[a-zA-Z][ ]+$/.test(firstname))?true:false
     return result
 }
 

@@ -1,6 +1,6 @@
-const productModel=require("../models/productmodel")
-const UserModel= require("../models/usermodel")
-const CartModel=require("../models/cartmodel")
+const productModel=require("../model/productModel")
+const UserModel= require("../model/userModel")
+const CartModel=require("../model/cardModel")
 const {isValidObjectId}= require ("../validation/validation")
 
 //===================================================================create Cart=================================================================

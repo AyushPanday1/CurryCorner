@@ -1,5 +1,5 @@
-const orderModel=require("../models/ordermodel")
-const cartModel=require("../models/cartmodel")
+const orderModel=require("../model/ordermodel")
+const cartModel=require("../model/cardModel")
 const {isValidObjectId,isValidStatus}=require("../validation/validation")
 
 

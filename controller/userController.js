@@ -46,7 +46,6 @@ const createUser = async (req, res) => {
         data.address = JSON.parse(data.address)
 
         if (data.address) {
-
             let { street, city, pincode } = data.address
 
             if (!street || typeof (street) != "string") { return res.status(400).send({ status: false, message: "shipping street is mandatory & valid !" }) }
@@ -72,6 +71,8 @@ const loginUser = async (req, res) => {
 
     try {
         let data = req.body
+
+        console.log(data)
         if (Object.keys(data).length == 0) { return res.status(400).send({ status: false, message: "Please enter Email Address and Password to Login yourself" }) }
 
         let { email, phone, password } = data;
@@ -134,7 +135,7 @@ const getUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try {
-        let userProfile = req.userByUserId
+        let userId = req.params.userId
 
         let data = req.body;
         let files = req.files;
@@ -150,8 +151,10 @@ const updateUser = async (req, res) => {
 
         let { name, email, phone, password } = data
 
+        console.log(name)
+
         if (name || name == "") {
-            if (!isValidname(name)) return res.status(400).send({ status: false, message: "Name is required and should not be an empty string !" });
+            if (isValidname(name)) return res.status(400).send({ status: false, message: "Name is required and should not be an empty string !" });
         }
 
         if (email || email == "") {
@@ -170,22 +173,16 @@ const updateUser = async (req, res) => {
             if (!validPassword(password)) { return res.status(400).send({ status: false, message: "Please enter valid password" }) }
         }
 
-        if (data.address || data.address == "") {
 
-            if (data.address == "") { return res.status(400).send({ status: false, message: "Address can't be empty !" }) }
+        if (data.address) {
 
-            let tempAddress = userProfile.address
-
+            
+        data.address = JSON.parse(data.address)
             let { street, city, pincode } = data.address
 
-            if (street) { tempAddress.street = street }
-            if (city) { tempAddress.city = city }
-            if (pincode || pincode == "") {
-                if (typeof (pincode) != "number" || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, msg: "Please enter pincode & should be valid !" }) }
-                tempAddress.pincode = pincode
-            }
-
-            data.address = tempAddress;
+            if (!street || typeof (street) != "string") { return res.status(400).send({ status: false, message: "shipping street is mandatory & valid !" }) }
+            if (!city || typeof (city) != "string") { return res.status(400).send({ status: false, message: "shipping city is mandatory & valid !" }) }
+            if (!pincode || typeof (pincode) != "number" || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, message: "Please enter shipping pincode & should be valid !" }) }
         }
 
         if (files && files.length > 0) {
@@ -193,7 +190,7 @@ const updateUser = async (req, res) => {
             data.profileImage = profileImgUrl;
         }
 
-        let updateUser = await userModel.findOneAndUpdate({ _id: userProfile._id }, data, { new: true })
+        let updateUser = await userModel.findOneAndUpdate({ _id: userId }, data, { new: true })
         res.status(200).send({ status: true, message: "User profile updated", data: updateUser });
 
     } catch (err) {
