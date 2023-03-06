@@ -7,32 +7,42 @@ const {createCart,updateCart,getCart,deleteCart}=require ("../controller/cartcon
 const {createOrder,updateOrder}=require("../controller/ordercontroller") 
 
 
+//====================== User Api =========================//
+
 router.post("/user", createUser)
 router.post("/loginUser", loginUser)
 router.get("/user/:userId", getUser)
 router.put("/user/:userId", updateUser)
 
 
-router.post("/shop", createShop)
+//===================== Shop APIs ==========================//
 
+router.post("/shop", createShop)
 router.put("/shop/:shopId", UpdateeShop)
 
+
+
+//===================== Product APIs ==========================//
 
 router.post("/product", createProduct)
 router.put("/product/:productId", updateProuct)
 
-router.post("/users/:userId/cart",createCart)
+//===================== Card APIs ==========================//
 
-router.put("/users/:userId/cart",updateCart)
+router.post("/users/:userId/cart", createCart)
 
-router.get("/users/:userId/cart",getCart)
+router.put("/users/:userId/cart", updateCart)
 
-router.delete("/users/:userId/cart",deleteCart)
+router.get("/users/:userId/cart", getCart)
+
+router.delete("/users/:userId/cart", deleteCart)
 
 
-router.post("/users/:userId/orders",createOrder)
+//===================== Order APIs ==========================//
 
-router.put("/users/:userId/orders",updateOrder)
+router.post("/users/:userId/orders", createOrder)
+
+router.put("/users/:userId/orders", updateOrder)
 
 
 module.exports = router;

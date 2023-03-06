@@ -138,6 +138,11 @@ const updateUser = async (req, res) => {
     try {
         let userId = req.params.userId
 
+        if (!isValidObjectId(userId)) { return res.status(400).send({ status: false, message: "Please enter valid userId" }) }
+
+        let user = await userModel.findById(userId)
+        if (!user) { return res.status(404).send({ status: false, msg: "User not found !" }) }
+
         let data = req.body;
         let files = req.files;
 
@@ -151,8 +156,6 @@ const updateUser = async (req, res) => {
         }
 
         let { name, email, phone, password } = data
-
-        console.log(name)
 
         if (name || name == "") {
             if (isValidname(name)) return res.status(400).send({ status: false, message: "Name is required and should not be an empty string !" });
@@ -174,17 +177,30 @@ const updateUser = async (req, res) => {
             if (!validPassword(password)) { return res.status(400).send({ status: false, message: "Please enter valid password" }) }
         }
 
+        let tempAddress = user.address
 
         if (data.address) {
 
-            
-        data.address = JSON.parse(data.address)
+            data.address = JSON.parse(data.address)
+
             let { street, city, pincode } = data.address
 
-            if (!street || typeof (street) != "string") { return res.status(400).send({ status: false, message: "shipping street is mandatory & valid !" }) }
-            if (!city || typeof (city) != "string") { return res.status(400).send({ status: false, message: "shipping city is mandatory & valid !" }) }
-            if (!pincode || typeof (pincode) != "number" || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, message: "Please enter shipping pincode & should be valid !" }) }
+            if (street) {
+                if (!street || typeof (street) != "string") { return res.status(400).send({ status: false, message: "shipping street is mandatory & valid !" }) }
+                tempAddress.street = street
+            }
+
+            if (city) {
+                if (!city || typeof (city) != "string") { return res.status(400).send({ status: false, message: "shipping city is mandatory & valid !" }) }
+                tempAddress.city = city
+            }
+
+            if (pincode) {
+                if (!pincode || typeof (pincode) != "number" || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, message: "Please enter shipping pincode & should be valid !" }) }
+                tempAddress.pincode = pincode
+            }
         }
+        data.address = tempAddress;
 
         if (files && files.length > 0) {
             let profileImgUrl = await uploadFile(files[0]);
@@ -198,6 +214,7 @@ const updateUser = async (req, res) => {
         res.status(500).send({ status: false, error: err.message })
     }
 }
+
 
 
 
