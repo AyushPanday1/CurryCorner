@@ -22,7 +22,7 @@ const createProduct = async (req, res) => {
 
         let result = await productModel.create(data)
 
-        res.status(201).send({ status: true, message: "product has created !" })
+        res.status(201).send({ status: true, data:result })
     } catch (err) {
         res.status(500).send({ status: false, message: err.message })
     }
