@@ -5,9 +5,17 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 
 const restourant = new mongoose.Schema({
 
-    title:{type:String,required:true},
+    name:{type:String,required:true},
 
-    adddress:{type:String,require:true},
+    mailId:{type:String},
+
+    contactNo:{type:String},
+
+    address: {
+        street: { type: String, trim: true },
+        city: { type: String, trim: true },
+        pincode: { type: Number, require: true, trim: true }
+    },
 
     rating:{type:Number},
 
