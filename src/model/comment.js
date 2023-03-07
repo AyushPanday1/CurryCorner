@@ -13,6 +13,7 @@ const CommentSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    isDeleted: { type: Boolean, default: false },
     comments: {
         type: String,
         required: true

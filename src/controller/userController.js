@@ -2,6 +2,7 @@ const userModel = require("../model/userModel")
 const { isValidObjectId } = require("mongoose")
 const { uploadFile } = require("../aws")
 const jwt = require("jsonwebtoken")
+const axios = require("axios")
 const { validateEmail, validPassword, isValidMobile, isValidname } = require("../validation/validation")
 
 
@@ -215,8 +216,16 @@ const updateUser = async (req, res) => {
     }
 }
 
+const location=async function (req,res){
+    let data=await axios.get(`https://api.ipify.org/?format=json`)
+    let location=await axios.get(`https://www.iplocate.io/api/lookup/${data.data.ip}`)
+    
+    // console.log(data.data)
+    
+    res.send({data:location.data})
+    
+}
 
 
 
-
-module.exports = { createUser, loginUser, getUser, updateUser }
+module.exports = { createUser, loginUser, getUser, updateUser, location }
