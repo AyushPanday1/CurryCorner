@@ -42,17 +42,31 @@ const createUser = async (req, res) => {
 
 
         data.profileImage = await uploadFile(files[0])
+        let dataa = await axios.get(`https://api.ipify.org/?format=json`)
+        let location = await axios.get(`https://www.iplocate.io/api/lookup/${dataa.data.ip}`)
 
-        if (!data.address) { return res.status(400).send({ status: false, message: "Please enter address !" }) }
-        data.address = JSON.parse(data.address)
+        let address = {
 
-        if (data.address) {
-            let { street, city, pincode } = data.address
-
-            if (!street || typeof (street) != "string") { return res.status(400).send({ status: false, message: "shipping street is mandatory & valid !" }) }
-            if (!city || typeof (city) != "string") { return res.status(400).send({ status: false, message: "shipping city is mandatory & valid !" }) }
-            if (!pincode || typeof (pincode) != "number" || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, message: "Please enter shipping pincode & should be valid !" }) }
         }
+
+
+        address.state = location.data.subdivision
+        address.city = location.data.city
+        address.pincode = location.data.postal_code
+
+        data.address = address
+
+
+        // if (!data.address) { return res.status(400).send({ status: false, message: "Please enter address !" }) }
+        // data.address = JSON.parse(data.address)
+
+        // if (data.address) {
+        //     let { street, city, pincode } = data.address
+
+        //     if (!street || typeof (street) != "string") { return res.status(400).send({ status: false, message: "shipping street is mandatory & valid !" }) }
+        //     if (!city || typeof (city) != "string") { return res.status(400).send({ status: false, message: "shipping city is mandatory & valid !" }) }
+        //     if (!pincode || typeof (pincode) != "number" || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, message: "Please enter shipping pincode & should be valid !" }) }
+        // }
 
         const result = await userModel.create(data)
 
@@ -63,11 +77,6 @@ const createUser = async (req, res) => {
     }
 }
 
-
-
-
-
-//------------------- User Login API ----------------------//
 
 const loginUser = async (req, res) => {
 
@@ -107,9 +116,6 @@ const loginUser = async (req, res) => {
         return res.status(500).send({ status: false, message: err.message })
     }
 }
-
-
-
 
 
 //------------------- Get User API ----------------------//
@@ -216,14 +222,14 @@ const updateUser = async (req, res) => {
     }
 }
 
-const location=async function (req,res){
-    let data=await axios.get(`https://api.ipify.org/?format=json`)
-    let location=await axios.get(`https://www.iplocate.io/api/lookup/${data.data.ip}`)
-    
+const location = async function (req, res) {
+    let data = await axios.get(`https://api.ipify.org/?format=json`)
+    let location = await axios.get(`https://www.iplocate.io/api/lookup/${data.data.ip}`)
+
     // console.log(data.data)
-    
-    res.send({data:location.data})
-    
+
+    res.send({ data: location.data })
+
 }
 
 

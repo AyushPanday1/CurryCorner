@@ -1,0 +1,162 @@
+#bigBox {
+    height: 100vh;
+    border: 0.2px solid white;
+    /* font-family: 'Aboreto', cursive; */
+    /* font-family: 'Teko', sans-serif; */
+    background-image: url(https://i.pinimg.com/originals/5e/f9/d7/5ef9d70b03d22b1acd145b9422d3a33f.gif);
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-color: #FFFFFF;
+}
+
+.userResister {
+    padding: 2%;
+    margin-top: 2%;
+    /* border: 2px solid red; */
+    width: 35%;
+    height: fit-content;
+    color: black;
+    font-weight: bold;
+    margin-left: 58%;
+    text-align: end;
+    border-radius: 10px;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 10% black;
+
+}
+
+#userResister {
+    width: fit-content;
+    /* border: 2px solid red; */
+    color: white;
+    margin-inline: 65%;
+    margin-top: 0px;
+    color: black;
+    text-align: center;
+}
+
+.inputs {
+    height: 30px;
+    padding: 1px;
+    border-radius: 5px;
+    margin: 8px;
+    width: 70%;
+}
+
+#logins {
+    margin-inline: 44%;
+    margin-block: 50px;
+
+}
+
+#btn {
+    margin-right: 25%;
+    background-color: #115fbc;
+    margin-block: 6%;
+    border: 1px solid rgb(19, 66, 209);
+    width: 50%;
+
+}
+
+#btn:hover {
+    background-color: #2679dd;
+}
+
+#title {
+
+    margin-right: 51%;
+
+}
+
+#select {
+    height: 22px;
+    margin: 2vh;
+    border-radius: 5px;
+}
+
+
+
+
+
+.Profile{
+    height: 100vh;
+    border: 0.2px solid white;
+    background-image: url(https://st4.depositphotos.com/5927262/20739/i/600/depositphotos_207396570-stock-photo-happy-summer-time-freelancer-travel.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+   
+}
+
+
+
+
+
+#profilePicture{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 5rem;
+}
+
+.formBox{
+   width: 25rem;
+   padding: 1rem;
+   height: fit-content; 
+   padding: 1rem;
+   background-color: rgb(11, 11, 182);
+   color: white;
+   border-radius: 1rem;
+}
+
+.Profile{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.DPIcon{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 01rem;
+    border: 1px solid blue;
+    background-color: white;
+    cursor: pointer;
+    color: rgb(88, 119, 234);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.eachInputBox{
+    margin: 0.5rem;
+}
+
+
+.eachInputBox{
+    display: flex;
+    flex-direction: column;
+}
+
+#DPBOX{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#resis{
+    margin-top: 0rem;
+    font-size: 2.5rem;
+}
+
+
+.left{
+    margin-left: 3rem;
+    margin-top: 2rem;
+    color: white;
+    background-color: skyblue;
+    width: fit-content;
+    font-size: 3rem;
+}

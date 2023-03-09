@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     background-image: url("../../../public/1412206.jpg");
-    height: 18.6cm;
+    height: 38rem;
     background-color: #cccccc;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: hidden;
     }
     
     .user_card {
