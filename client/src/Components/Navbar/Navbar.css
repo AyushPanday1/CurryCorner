@@ -1,0 +1,67 @@
+
+#navbarProfile {
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+}
+
+
+.navbarIcons {
+    flex: 1;
+    text-align: center;
+}
+
+#navbarNav {
+    flex: 8;
+   justify-content: center;
+}
+
+#navbarDP {
+    margin-right: 2.5rem;
+    flex: 0.3;
+    text-align: center;
+    display: flex;
+}
+
+
+
+.navbarBigBox{
+    background-color: rgb(243, 243, 243);
+    border: 1px solid red;
+    color: black;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+
+
+
+#navbarDP >a{
+    font-weight: bold;
+    
+}
+
+
+
+
+#loginIcon{
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#loginIcon:hover{
+   border: 2px solid black;
+}
+
+
+.d-flex >input {
+    width: 20rem;
+}
+
+

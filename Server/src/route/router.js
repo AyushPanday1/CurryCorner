@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const { createShop, UpdateeShop } = require('../controller/shopController')
-const { createProduct, updateProuct } = require("../controller/productController")
+const { createProduct, getProduct, updateProuct } = require("../controller/productController")
 const { createUser, loginUser, getUser, updateUser, location } = require("../controller/userController")
 const { createCart, updateCart, getCart, deleteCart } = require("../controller/cartcontroller")
 const { createOrder, updateOrder } = require("../controller/ordercontroller")
@@ -28,7 +28,7 @@ router.put("/shop/:shopId", UpdateeShop)
 
 router.post("/product", createProduct)
 router.put("/product/:productId", updateProuct)
-
+router.get("/product", getProduct)
 
 
 

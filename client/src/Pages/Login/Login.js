@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import "./Login.css"
 
@@ -43,13 +43,13 @@ function Login() {
 									<div className="input-group-append">
 										<span className="input-group-text"><i className="fas fa-user"></i></span>
 									</div>
-									<input type="text"  className="form-control input"  placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+									<input type="text" className="form-control input" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
 								</div>
 								<div className="input-group mb-2">
 									<div className="input-group-append">
 										<span className="input-group-text"><i className="fas fa-key"></i></span>
 									</div>
-									<input type="password"  className="form-control input" placeholder="Password"  value={password} onChange={(e) => setPassword(e.target.value)}  />
+									<input type="password" className="form-control input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
 								</div>
 								<div className="form-group">
 									<div className="custom-control custom-checkbox">

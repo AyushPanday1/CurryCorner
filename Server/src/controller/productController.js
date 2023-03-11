@@ -30,6 +30,16 @@ const createProduct = async (req, res) => {
 }
 
 
+const getProduct = async (req, res) => {
+    try {
+
+        let result = await productModel.find()
+        res.status(201).send({ status: true, data: result })
+    } catch (err) {
+        res.status(500).send({ status: false, message: err.message })
+    }
+}
+
 
 
 const updateProuct = async (req, res) => {   //productId
@@ -53,4 +63,4 @@ const updateProuct = async (req, res) => {   //productId
 }
 
 
-module.exports = { createProduct, updateProuct }
+module.exports = { createProduct, getProduct, updateProuct }
