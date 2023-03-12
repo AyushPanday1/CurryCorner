@@ -3,7 +3,8 @@
 .main {
     display: flex;
     flex-wrap: wrap;
-    margin:5cm;
+    margin:3rem;
+    margin-top: 7rem;
     font-family: 'Aboreto', cursive;
     
 }

@@ -8,9 +8,9 @@ function Menu({ sideBurger }) {
             <ul>
                 <li><NavLink to='/'>Home</NavLink></li>
                 <li><NavLink to='/product'>Products</NavLink></li>
-                <li><NavLink to='/register'>Restorents</NavLink></li>
                 <li><NavLink to='/addshop'>Add Shop</NavLink></li>
                 <li><NavLink to='/addproduct'>Add Product</NavLink></li>
+                <li><NavLink to='/cart'>Cart</NavLink></li>
                 <li><NavLink to='/About'>About us</NavLink></li>
             </ul>
         </div>

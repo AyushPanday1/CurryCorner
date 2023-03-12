@@ -53,7 +53,9 @@ function Navbar({ user, userLogin }) {
                     {sideBurger ? <i className="fa-solid fa-bars barger" onClick={slideStart}></i> : <i className="fa-solid fa-xmark" onClick={slideEnd}></i>}
                 </div>
             </nav>
-            <Menu sideBurger={sideBurger} />
+            <div className="menuBtnBox">
+                <Menu sideBurger={sideBurger} />
+            </div>
         </div>
     )
 }
