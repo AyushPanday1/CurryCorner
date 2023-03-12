@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
+import Menu from '../../Components/Menu/Menu'
 import "./Navbar.css"
+import { useNavigate } from 'react-router-dom'
+
 
 
 function Navbar({ user, userLogin }) {
@@ -9,35 +12,48 @@ function Navbar({ user, userLogin }) {
         localStorage.removeItem("user")
     }
 
+    //SideBurger
+
     const [sideBurger, SetSideBurger] = useState(true)
 
-    const slideStart=()=>{
+    const slideStart = () => {
         SetSideBurger(false)
     }
-
-    const slideEnd=()=>{
+    const slideEnd = () => {
         SetSideBurger(true)
     }
 
 
+    const [searchName, setSearchName] = useState("")
+
+    const navigate = useNavigate()
+    const searchItems = (e) => {
+        e.preventDefault()
+        if (searchName === "") { return alert("Error : Search for food !") }
+        navigate(`/items?title=${searchName}`, { replace: true })
+        //window.location.replace(`/items?title=${searchName}`)
+    }
+
+    let userData = JSON.parse(localStorage.getItem("user"))
 
     return (
         <div className='navbarBigBox'>
             <nav className="navbar navbar-expand-lg">
                 <div className="navbarIcons">
-                    <span>IAMLOGO</span>
+                    <img className='nav-logo' src="https://i.pinimg.com/originals/b1/fc/bb/b1fcbbfd4fb8116c714ef352bb39bbaf.jpg" alt="img" />
+                    <span>OniFood</span>
                 </div>
                 <form className="d-flex" id='navbarNav' role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="btn btn-outline-success" type="submit">Search</button>
+                    <input className="form-control me-2" type="search" placeholder={userData.userId.address.city} aria-label="Search" value={searchItems} onChange={(e) => setSearchName(e.target.value)} />
+                    <button className="btn btn-outline-success" onClick={searchItems} type="submit" >Search</button>
                 </form>
                 <div id="navbarDP">
-                    {userLogin ? <a href='/Profile'><img id="navbarProfile" src={user.profile} alt="Loading" /></a> :
-                        <a className="nav-link active" href="/Login"><i id='loginIcon' className="fa-solid fa-user"></i></a>}
-                    <span>Name</span>
-                    {sideBurger?<i className="fa-solid fa-bars" onClick={slideStart}></i>:<i className="fa-solid fa-xmark" onClick={slideEnd}></i>}
+                    <img id="navbarProfile" src={userData.userId.profileImage} alt="Loading" />
+                    <span>{userData.userId.name}</span>
+                    {sideBurger ? <i className="fa-solid fa-bars barger" onClick={slideStart}></i> : <i className="fa-solid fa-xmark" onClick={slideEnd}></i>}
                 </div>
             </nav>
+            <Menu sideBurger={sideBurger} />
         </div>
     )
 }

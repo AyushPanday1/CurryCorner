@@ -1,0 +1,35 @@
+.menu {
+    width: 14rem;
+    height: 100vh;
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 3.3rem;
+    /* right: -200px; */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+   
+}
+
+.menu ul {
+    
+    margin-top: 2rem;
+    width: 60%;
+}
+
+.menu li {
+    list-style: none;
+    margin-block: 15px;
+}
+
+.menu li:hover{
+    font-weight: bold;
+}

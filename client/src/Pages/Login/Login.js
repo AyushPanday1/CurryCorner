@@ -19,8 +19,7 @@ function Login() {
 
 		axios.post("http://localhost:3001/loginUser", obj).then((res) => {
 			localStorage.setItem("token", res.data.data.token)
-
-			localStorage.setItem("user", JSON.stringify(res.data.data.user))
+			localStorage.setItem("user", JSON.stringify(res.data.data))
 			window.location.replace("/")
 
 		}).catch((err) => alert(err.message))
@@ -58,7 +57,7 @@ function Login() {
 									</div>
 								</div>
 								<div className="d-flex justify-content-center mt-3 login_container">
-									<button type="button" name="button" className="btn login_btn" onClick={loginFunction}>Login</button>
+									<button id='loginBtn' type="button" name="button" className="btn login_btn" onClick={loginFunction}>Login</button>
 								</div>
 							</form>
 						</div>

@@ -1,4 +1,5 @@
 const productModel = require("../model/productModel")
+const shopModel = require("../model/shopMode")
 const { uploadFile } = require("../aws");
 const { isValidObjectId } = require("mongoose");
 
@@ -32,9 +33,32 @@ const createProduct = async (req, res) => {
 
 const getProduct = async (req, res) => {
     try {
+        let title = req.query.title
 
-        let result = await productModel.find()
+        
+        let options = {}
+        if (title) {
+            options.title = { $regex: title, $options: "i" }
+        }
+
+        let result = await productModel.find(options)
+
         res.status(201).send({ status: true, data: result })
+        
+    } catch (err) {
+        res.status(500).send({ status: false, message: err.message })
+    }
+}
+
+
+const getProductbyShopId = async (req, res) => {
+    try {
+        let shopId=req.params.shopId
+        let result = await productModel.find({shopId:shopId})
+        shopDetail=await shopModel.findById(shopId)
+
+
+        res.status(201).send({ status: true, data: result ,shopDetail:shopDetail})
     } catch (err) {
         res.status(500).send({ status: false, message: err.message })
     }
@@ -63,4 +87,4 @@ const updateProuct = async (req, res) => {   //productId
 }
 
 
-module.exports = { createProduct, getProduct, updateProuct }
+module.exports = { createProduct, getProduct, getProductbyShopId, updateProuct }
