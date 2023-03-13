@@ -6,7 +6,7 @@ function Menu({ sideBurger }) {
     return (
         <div className='menu' style={(sideBurger) ? { right: "-17rem" } : { right: "0rem" }}>
             <ul>
-                <li><NavLink to='/'>Home</NavLink></li>
+                <li><NavLink to='/home'>Home</NavLink></li>
                 <li><NavLink to='/product'>Products</NavLink></li>
                 <li><NavLink to='/addshop'>Add Shop</NavLink></li>
                 <li><NavLink to='/addproduct'>Add Product</NavLink></li>

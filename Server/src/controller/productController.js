@@ -35,7 +35,7 @@ const getProduct = async (req, res) => {
     try {
         let title = req.query.title
 
-        
+
         let options = {}
         if (title) {
             options.title = { $regex: title, $options: "i" }
@@ -44,7 +44,7 @@ const getProduct = async (req, res) => {
         let result = await productModel.find(options)
 
         res.status(201).send({ status: true, data: result })
-        
+
     } catch (err) {
         res.status(500).send({ status: false, message: err.message })
     }
@@ -53,12 +53,13 @@ const getProduct = async (req, res) => {
 
 const getProductbyShopId = async (req, res) => {
     try {
-        let shopId=req.params.shopId
-        let result = await productModel.find({shopId:shopId})
-        shopDetail=await shopModel.findById(shopId)
+        let shopId = req.params.shopId
+        let result = await productModel.find({ shopId: shopId })
+        shopDetail = await shopModel.findById(shopId)
+        let address = shopDetail.address
 
 
-        res.status(201).send({ status: true, data: result ,shopDetail:shopDetail})
+        res.status(201).send({ status: true, data: result, shopDetail: shopDetail, address: address })
     } catch (err) {
         res.status(500).send({ status: false, message: err.message })
     }

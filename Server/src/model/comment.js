@@ -5,7 +5,7 @@ const CommentSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    productId: {
+    shopId: {
         type: String,
         required: true
     },

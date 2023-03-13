@@ -5,6 +5,7 @@ const axios = require('axios');
 const newComment = async function (req, res) {
     try {
         let data = req.body
+        data.shopId = req.params.shopId
         data.date = new Date().toISOString().split('T')[0];
         const comment = await comentModel.create(data)
         res.status(200).send({ data: comment })
@@ -16,7 +17,7 @@ const newComment = async function (req, res) {
 
 const getComments = async function (req, res) {
     try {
-        const comments = await comentModel.find({ productId: req.params.prouctId, isDeleted: false });
+        const comments = await comentModel.find({ shopId: req.params.shopId, isDeleted: false });
 
         res.status(200).send({ data: comments })
     } catch (e) {
@@ -26,7 +27,7 @@ const getComments = async function (req, res) {
 
 const deleteComment = async function (req, res) {
     try {
-        await comentModel.findByIdAndUpdate({ _id: req.params.id }, { isDeleted: true })
+        await comentModel.findOneAndUpdate({ _id: req.params.commentId }, { isDeleted: true })
 
         res.status(200).send({ data: 'comment deleted successfully' });
     } catch (e) {
@@ -34,12 +35,5 @@ const deleteComment = async function (req, res) {
     }
 }
 
-const location = async function (req, res) {
-    let data = await axios.get(`https://api.ipify.org/?format=json`)
-    let location = await axios.get(`https://www.iplocate.io/api/lookup/${data.data.ip}`)
 
-    res.send({ data: location.data })
-
-}
-
-module.exports = { newComment, getComments, deleteComment, location }
+module.exports = { newComment, getComments, deleteComment }

@@ -3,8 +3,8 @@
 .main {
     display: flex;
     flex-wrap: wrap;
-    margin:3rem;
-    margin-top: 7rem;
+    margin:5cm;
+    margin-top:2rem;
     font-family: 'Aboreto', cursive;
     
 }
@@ -92,4 +92,18 @@ body {
 
 .grap {
     width: 40px;
+}
+
+#addTocardBtn:hover {
+    color: white;
+    background-color: blue;
+}
+
+#addTocardBtn {
+    font-weight: bold;
+}
+
+#addCardBtn {
+    margin-left: 12.7rem;
+    margin-top: 0rem;
 }

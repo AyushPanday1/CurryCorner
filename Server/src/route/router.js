@@ -2,10 +2,10 @@ const express = require("express")
 const router = express.Router()
 const { createShop, getShop, UpdateeShop } = require('../controller/shopController')
 const { createProduct, getProduct, updateProuct, getProductbyShopId } = require("../controller/productController")
-const { createUser, loginUser, getUser, updateUser, location } = require("../controller/userController")
+const { createUser, loginUser, getUser, updateUser } = require("../controller/userController")
 const { createCart, updateCart, getCart, deleteCart } = require("../controller/cartcontroller")
 const { createOrder, updateOrder } = require("../controller/ordercontroller")
-
+const { newComment, getComments, deleteComment } = require("../controller/commentcontroller")
 
 //====================== User Api =========================//
 
@@ -51,8 +51,15 @@ router.post("/users/:userId/orders", createOrder)
 
 router.put("/users/:userId/orders", updateOrder)
 
+//==================== comment =============================//
 
-router.get("/location", location)
+router.post("/comment/:shopId", newComment)
+
+router.get("/comment/:shopId", getComments)
+
+router.put("/comment/:commentId", deleteComment)
+
+
 
 
 module.exports = router;

@@ -23,6 +23,9 @@ function ProductCard({ product }) {
                                     </h4>
                                     <span className="s">{4}&nbsp;★</span>
                                 </div>
+                                <div className="writey  price" id='addCardBtn'>
+                                    <button className='btn' id='addTocardBtn'>Add to cart</button>
+                                </div>
 
                                 <div className="writey  price">
                                     <span className="p">₹: {element.price}</span>
@@ -30,11 +33,7 @@ function ProductCard({ product }) {
                                 </div>
                             </div>
 
-                            <div className="writey  price">
 
-                                <button>Review</button>
-                                <button>Add to cart</button>
-                            </div>
                             <p className="line"></p>
 
                             <div className="last_data d-flex justify-content-between align-items-center">
@@ -44,7 +43,7 @@ function ProductCard({ product }) {
                                     alt=""
                                 />
 
-                                <p> {Math.ceil(Math.random()*1000)+2000} + order placed from here recently</p>
+                                <p> {Math.ceil(Math.random() * 1000) + 2000} + order placed from here recently</p>
                                 <img
                                     src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
                                     className="grap"
