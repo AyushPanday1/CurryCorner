@@ -35,7 +35,7 @@ function Resister() {
         }
         axios.post("http://localhost:3001/user", options, config).then((res) => {
             alert("Account has created succesfully")
-            window.location.replace("/Login")
+            window.location.replace("/")
         }).catch((err) => alert(err.message))
     }
 

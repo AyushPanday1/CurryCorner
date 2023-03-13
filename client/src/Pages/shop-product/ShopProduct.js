@@ -97,7 +97,7 @@ function ShopProduct() {
 
       <div className="review-box" style={reviewBox}>
         {" "}
-        <Comment comment={comment} />
+        <Comment comment={comment}/>
 
         <Addcomment shopId={shopId} />
       </div>

@@ -1,11 +1,13 @@
-import React,{useState} from "react";
 import "./comment.css";
 import "../ShopCard/ShopCard.css";
 import axios from 'axios';
 
-function Comment({ comment }) {
+function Comment({ comment}) {
 
-function deletecomment(commentid){
+function deletecomment(commentid,a,b){
+  console.log(a,b)
+
+  if(a!=b) return alert("can't delete other person comment")
     axios.put(`http://localhost:3001/comment/${commentid}`)
         .then((res)=> {
             alert("your comment deleted successfully")
@@ -14,7 +16,7 @@ function deletecomment(commentid){
         )
         .catch((err) => alert(err.message))
     }
-
+    let userData = JSON.parse(localStorage.getItem("user"))
 
   return (
     <div className="comment-div">
@@ -37,7 +39,7 @@ function deletecomment(commentid){
                   <button className="btn btn-outline-success" type="submit">
                     <i className="fa-solid fa-comment"></i>
                   </button>
-                  <button className="btn btn-outline-success dle" type="submit" onClick={()=>deletecomment(element._id)}>
+                  <button className="btn btn-outline-success dle" type="submit" onClick={()=>deletecomment(element._id,element.name,userData.userId.name)}>
                   <i className="fa-solid fa-trash "></i>
                   </button>
                 </div>
