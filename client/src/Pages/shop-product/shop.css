@@ -37,3 +37,9 @@ margin-left: 2rem;
 .shop-img:hover{
     transform: scale(1.03);
 }
+
+
+.section *>span:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
