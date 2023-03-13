@@ -7,7 +7,7 @@ const restourant = new mongoose.Schema({
 
     name:{type:String,required:true},
 
-    emailId:{type:String},
+    email:{type:String},
 
     contactNo:{type:String},
 

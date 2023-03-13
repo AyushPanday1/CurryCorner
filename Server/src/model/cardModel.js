@@ -12,7 +12,10 @@ const cardSchema = new mongoose.Schema(
                     type:mongoose.Schema.Types.ObjectId,
                     ref:"Product"
                 },
-                quantity:Number
+                quantity:Number,
+                productImg:String,
+                productName:String,
+
             }
         ],
         totalPrice:Number,

@@ -4,6 +4,8 @@ const { uploadFile } = require("../aws")
 const jwt = require("jsonwebtoken")
 const axios = require("axios")
 const { validateEmail, validPassword, isValidMobile, isValidname } = require("../validation/validation")
+const { options } = require("../route/router")
+const shopMode = require("../model/shopMode")
 
 
 
@@ -109,7 +111,15 @@ const loginUser = async (req, res) => {
 
         let token = jwt.sign({ userId: userExist._id, email: userExist.email, phone: userExist.phone }, "zomato", { expiresIn: "1096h" })
 
-        return res.status(200).send({ status: true, message: "User login successfull", data: { userId: userExist, token: token } })
+        let option = {
+            userId : userExist,
+            token : token,
+        }
+
+        let shopId = await shopMode.findOne({email : email})
+        if(shopId){option.shopId = shopId._id}
+
+        return res.status(200).send({ status: true, message: "User login successfull", data: option})
 
     } catch (err) {
         return res.status(500).send({ status: false, message: err.message })

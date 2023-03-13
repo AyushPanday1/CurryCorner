@@ -20,6 +20,7 @@ function Login() {
 		axios.post("http://localhost:3001/loginUser", obj).then((res) => {
 			localStorage.setItem("token", res.data.data.token)
 			localStorage.setItem("user", JSON.stringify(res.data.data))
+			localStorage.setItem("shopId", res.data.data.shopId)
 			window.location.replace("/home")
 
 		}).catch((err) => alert(err.message))
