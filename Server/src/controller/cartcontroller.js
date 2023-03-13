@@ -69,15 +69,19 @@ const createCart = async function (req, res) {
 
                     let cart = await CartModel.findOneAndUpdate({ _id: oldCart }, { items: productPresent, totalPrice: price, totalItems: totalItem }, { new: true })
 
-                    return res.status(200).send({ status: true, message: "Product added successfully", data: cart })
+                    return res.status(200).send({ status: true, message: "Product added successfully", data: cart})
                 }
             }
 
             //======================adding new item in old cart=========
 
+            console.log(product)
+
             let newItem = {
                 productId: productId,
-                quantity: quantity
+                quantity: quantity,
+                productImg:product.image,
+                productName:product.title
             }
             price = oldUsercart.totalPrice + (product.price * quantity)
 
@@ -87,14 +91,16 @@ const createCart = async function (req, res) {
             totalItem = allnewItems.length
 
             let cart = await CartModel.findByIdAndUpdate({ _id: oldCart }, { items: productPresent, totalPrice: price, totalItems: totalItem }, { new: true })
-            return res.status(200).send({ status: true, message: "Product added successfully", data: cart })
+            return res.status(200).send({ status: true, message: "Product added successfully", data: cart})
         }
 
         //=======================creating new cart for user===========
 
         items = {
             productId: productId,
-            quantity: quantity
+            quantity: quantity,
+            productImg:product.image,
+            productName:product.title
         }
         let cart = await CartModel.create({ userId: userId, items: items, totalPrice: totalPrice, totalItems: 1 })
 
@@ -120,6 +126,8 @@ const updateCart = async function (req, res) {
             data[i] = data[i].trim()
         }
         let { productId, cartId, removeProduct } = data
+
+        removeProduct=parseInt(removeProduct)
 
         //============================product validation chk
 
@@ -170,13 +178,11 @@ const updateCart = async function (req, res) {
         if (removeProduct == -1 && editproduct.quantity > 1) {
             editproduct.quantity = editproduct.quantity - 1
             totalCartPrice = totalCartPrice - productPrice
-            totalItemsInCart = totalItemsInCart - 1
         }
 
         else if (removeProduct == 1) {
             editproduct.quantity = editproduct.quantity + 1
-            totalCartPrice = totalCartPrice + productPrice
-            totalItemsInCart = totalItemsInCart + 1
+            totalCartPrice = totalCartPrice + parseInt(productPrice)
         }
         //===========================deleting the whole item
 
@@ -216,8 +222,8 @@ const getCart = async function (req, res) {
         let userId = req.params.userId
         let findCart = await CartModel.findOne({ userId: userId }).populate({ path: "items.productId", select: { title: 1, price: 1, productImage: 1 } })
         if (!findCart) { return res.status(400).send({ status: false, message: "No cart present for this user" }) }
-        if (findCart.items.length == 0) { return res.status(404).send({ status: false, message: "No items present in this cart" }) }
-        return res.status(200).send({ status: true, message: "Cart Details", data: findCart })
+        //if (findCart.items.length == 0) { return res.status(404).send({ status: false, message: "No items present in this cart" }) }
+        return res.status(200).send({ status: true, message: "Cart Details", data: findCart  ,Items:findCart.items})
     }
     catch (error) { return res.status(500).send({ status: false, message: error.message }) }
 }

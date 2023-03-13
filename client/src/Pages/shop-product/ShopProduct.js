@@ -39,6 +39,7 @@ function ShopProduct() {
         Setaddress(responce.data.address);
       })
       .catch((err) => alert(err.message));
+
   }, []);
 
   useEffect(() => {
@@ -78,7 +79,7 @@ function ShopProduct() {
       </div>
       <div className="section">
         <h5>
-          <span onClick={showproduct}>product</span>
+          <span  onClick={showproduct}>Product</span>
         </h5>
         <h5>
           <span className="nchild" onClick={ShowReview}>

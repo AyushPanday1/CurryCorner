@@ -8,6 +8,7 @@ import AddShop from './Pages/AddShop/AddShop';
 import AddProduct from './Pages/AddProducts/AddProduct';
 import Home from './Pages/HomePage/Home';
 import ShopProduct from "./Pages/shop-product/ShopProduct"
+import Cart from './Pages/Cart/Cart';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='shopproduct' element={<ShopProduct />} >
           <Route path=':shopId' element={<ShopProduct />} />
         </Route>
+        <Route path='cart' element={<Cart/>} />
       </Routes>
     </BrowserRouter>
   );
