@@ -1,4 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
+
+
+
 function validateEmail(email) {
     let regex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
     return ( typeof(email) !="string" || regex.test(email)) ? true :false

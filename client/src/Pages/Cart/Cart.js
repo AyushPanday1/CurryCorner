@@ -16,9 +16,12 @@ function Cart() {
     axios
       .get(`http://localhost:3001/users/${userData.userId._id}/cart`)
       .then((responce) => {
+        if(responce.data.Items.length<1){
+          alert("Your Cart is empty 🥹!")
+          window.location.replace("/home")
+        }
         setCart(responce.data.data);
         setItem(responce.data.Items);
-        console.log(Cart);
       })
       .catch((err) => alert(err.message));
   }, []);
@@ -31,8 +34,8 @@ function Cart() {
     };
     axios
       .post(`http://localhost:3001/users/${userId}/orders`, object)
-      .then((res) => {
-        alert("order placed");
+      .then(() => {
+        alert("Order placed 😍");
         window.location.replace("home");
       })
       .catch((err) => alert(err.message));

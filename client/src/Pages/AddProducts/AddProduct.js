@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import "../AddShop/AddShop.css"
 import Navbar from '../../Components/Navbar/Navbar'
 import axios from 'axios'
@@ -15,28 +15,18 @@ function AddProduct() {
     const [number, setNumber] = useState("")
     const [name, setName] = useState("")
     const [rating, setRating] = useState("")
-    const [street, setStreet] = useState("")
-    const [city, setCity] = useState("")
-    const [pincode, setPincode] = useState("")
-
 
     const createShop = (e) => {
         e.preventDefault()
 
-        //validations
-        if (String(number).length !== 10) { return alert("Please enter valid Number !") }
-        if (String(pincode).length !== 6) { return alert("Please enter valid Pincode !") }
-        if (rating < 1 || rating > 5) { return alert("Please enter valid rating") }
-
         let options = {}
-        options.name = name
-        options.email = "lmb000@gmail.com" //localStorage.getItem("user.email")
-        options.contactNo = number
-        options.pic = shopImage
-        options.rating = rating
-        options.address = {
-            street, city, pincode
-        }
+        options.shopId = localStorage.getItem("shopId")
+        options.title = name
+        options.price = number
+        options.image = shopImage
+        options.catogary = rating
+
+        console.log(options.shopId)
 
         let config = {
             headers: {
@@ -44,13 +34,12 @@ function AddProduct() {
             }
         }
 
-        axios.post("http://localhost:3001/shop", options, config)
-            .then((res) => {
-                localStorage.setItem("shopId", res.data.data._id);
-                alert("Shop created Succesfully !")
-                navigation("/", { replace: true })                          //can redirect to add products
+        axios.post("http://localhost:3001/product", options, config)
+            .then(() => {
+                alert("Product has added 😎")
+                navigation(`/shopproduct/${options.shopId}`, { replace: true })     //window.location.replace(`/${a}`)                     //can redirect to add products
             })
-            .catch((err) => { console.alert(err.message) })
+            .catch((err) => { alert(err.message) })
     }
 
     const displayImage = (e) => {
@@ -79,14 +68,9 @@ function AddProduct() {
                 <label htmlFor='shopImage'>
                     <img id='showImage' src={image} alt="Error" />
                 </label>
-                <input className='inputGroup' type="text" placeholder='Shop name...' value={name} onChange={(e) => setName(e.target.value)} />
-                <input className='inputGroup' type="tel" placeholder='Mobile number...' value={number} onChange={(e) => setNumber(e.target.value)} />
-                <input className='inputGroup' type="number" placeholder='Rating...' value={rating} onChange={(e) => setRating(e.target.value)} />
-                <div id="addressBox" >
-                    <input className='addressGroup' type="text" placeholder='Street...' value={street} onChange={(e) => setStreet(e.target.value)} />
-                    <input className='addressGroup' type="text" placeholder='City...' value={city} onChange={(e) => setCity(e.target.value)} />
-                    <input className='addressGroup' type="number" placeholder='Pincode...' value={pincode} onChange={(e) => setPincode(e.target.value)} />
-                </div>
+                <input className='inputGroup' type="text" placeholder='Title...' value={name} onChange={(e) => setName(e.target.value)} />
+                <input className='inputGroup' type="number" placeholder='Rate in Indian Rupees...' value={number} onChange={(e) => setNumber(e.target.value)} />
+                <input className='inputGroup' type="text" placeholder='Category...' value={rating} onChange={(e) => setRating(e.target.value)} />
                 <button className="btn btn-outline-success" id='btnAddShop' onClick={createShop} type="submit">Add</button>
             </form>
         </div>

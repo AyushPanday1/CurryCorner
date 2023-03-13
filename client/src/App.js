@@ -10,7 +10,6 @@ import Home from './Pages/HomePage/Home';
 import ShopProduct from "./Pages/shop-product/ShopProduct"
 import Cart from './Pages/Cart/Cart';
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -21,10 +20,11 @@ function App() {
         <Route path='items' element={<Items />} />
         <Route path='addshop' element={<AddShop />} />
         <Route path='addproduct' element={<AddProduct />} />
+        <Route path='cart' element={<Cart />} />
         <Route path='shopproduct' element={<ShopProduct />} >
           <Route path=':shopId' element={<ShopProduct />} />
         </Route>
-        <Route path='cart' element={<Cart/>} />
+        
       </Routes>
     </BrowserRouter>
   );

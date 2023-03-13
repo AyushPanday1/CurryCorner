@@ -33,13 +33,14 @@ function AddShop() {
 
         let options = {}
         options.name = name
-        options.email = "lmb000@gmail.com" //localStorage.getItem("user.email")
+        options.email = JSON.parse(localStorage.getItem("user")).userId.email
         options.contactNo = number
         options.pic = shopImage
         options.rating = rating
         options.address = {
             street, city, pincode
         }
+    
 
         let config = {
             headers: {
@@ -51,9 +52,11 @@ function AddShop() {
             .then((res) => {
                 localStorage.setItem("shopId", res.data.data._id);
                 alert("Shop created Succesfully !")
-                navigation("/", { replace: true })                          //can redirect to add products
+                navigation("/home", { replace: true })                          //can redirect to add products
+            }).catch((err) => {
+                alert(err.message)
+                navigation("/home", { replace: true })
             })
-            .catch((err) => { console.alert(err.message) })
     }
 
     const displayImage = (e) => {

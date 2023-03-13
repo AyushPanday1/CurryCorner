@@ -42,7 +42,7 @@ function Navbar() {
                     </div>
                 </a>
                 <form className="d-flex" id='navbarNav' role="search">
-                    <input className="form-control me-2" type="search" placeholder={userData.userId.address.city} aria-label="Search" value={searchName} onChange={(e) => setSearchName(e.target.value)} />
+                    <input className="form-control me-2" type="search" placeholder={"📍"+userData.userId.address.city} aria-label="Search" value={searchName} onChange={(e) => setSearchName(e.target.value)} />
                     <button className="btn btn-outline-success" onClick={searchItems} type="submit" >Search</button>
                 </form>
                 <div id="navbarDP">
