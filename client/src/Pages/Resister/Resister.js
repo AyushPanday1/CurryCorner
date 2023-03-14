@@ -95,7 +95,7 @@ function Resister() {
                     </div>
 
                     <button type="submit" id='btn' className="btn btn-primary">Create Account</button>
-                    <a id='logins' href='/Login'>Login</a>
+                    <a id='logins' href='/'>Login</a>
                 </form>
             </div>
         </div>

@@ -75,7 +75,7 @@ const createCart = async function (req, res) {
 
             //======================adding new item in old cart=========
 
-            console.log(product)
+            
 
             let newItem = {
                 productId: productId,
