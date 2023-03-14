@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import "../AddShop/AddShop.css"
 import Navbar from '../../Components/Navbar/Navbar'
 import axios from 'axios'

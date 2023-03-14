@@ -15,17 +15,14 @@ function Resister() {
 
     const resisterUser = (e) => {
         e.preventDefault();
-
         const formData = new FormData();
         formData.append("file", pic)
         formData.append("fileName", pic.name)
-
         const config = {
             headers: {
                 'content-type': 'multipart/form-data'
             },
         };
-
         const options = {
             name: name,
             email: email,
@@ -41,15 +38,11 @@ function Resister() {
 
     const displayDP = (e) => {
         e.preventDefault()
-
         setPic(e.target.files[0])
-
         let imgFile = e.target.files[0]
         var reader = new FileReader();
-
         var imgtag = document.getElementById("profilePicture");
         imgtag.title = imgFile.name;
-
         reader.onload = function (e) {
             setProfile(e.target.result);
         };

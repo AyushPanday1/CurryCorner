@@ -1,32 +1,39 @@
 #recipiBox {
-    display: flex;
-    flex-direction: column;
-    padding: 5rem;
-    margin: 5rem auto;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 1rem;
-    background-color: rgb(33, 33, 223);
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  margin: 5rem auto;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 1rem;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    40deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(204, 193, 89, 1) 21%,
+    rgba(253, 205, 29, 0.9389005602240896) 38%,
+    rgba(252, 190, 50, 0.70640756302521) 76%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 
 .input12 {
-    margin: 1rem;
-    padding: 0.5rem;
-    border-radius: 8px;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
-#recipiBox div>span {
-    font-weight: bold;
-    margin-right: 1rem;
-    color: white;
+#recipiBox div > span {
+  font-weight: bold;
+  margin-right: 1rem;
+  color: white;
 }
 
-
-#title{
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    margin-inline: 1rem;
-    color: white;
-    font-weight: bold;
-    text-align: center;
+#title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-inline: 1rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }

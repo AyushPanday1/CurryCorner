@@ -14,14 +14,9 @@
     padding: 5px;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-
-}
 
 .writey {
     display: flex;
-
     justify-content: space-between;
     font-size: 1.4rem;
 }

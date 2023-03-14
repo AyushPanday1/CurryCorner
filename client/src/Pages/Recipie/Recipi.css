@@ -3,3 +3,8 @@
   width: 20rem;
   margin: 7rem;
 }
+.vid-body{
+display: flex;
+justify-content: flex-start;
+flex-wrap: wrap;
+}
