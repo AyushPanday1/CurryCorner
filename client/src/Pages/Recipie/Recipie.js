@@ -12,11 +12,11 @@ function Recipie() {
 
   useEffect(() => {
     setTimeout(() => {
-      setMsg({ display: "flex" })
-    }, 5000)
+      setMsg()
+    }, 3000)
     setTimeout(() => {
       setMsg({ display: "none" })
-    }, 15000)
+    }, 7000)
   }, [])
 
 

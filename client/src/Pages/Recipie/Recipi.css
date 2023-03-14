@@ -17,14 +17,9 @@ flex-wrap: wrap;
     width: 80%;
     box-shadow: rgba(0, 0, 0, 0.08) 80px 80px 800px;
 }
-
-
-
-
-
 #addRecipiIcon{
-  width: 1rem;
-  height: 1rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,19 +27,16 @@ flex-wrap: wrap;
   border-radius: 2rem;
   background-color: rgb(71, 219, 125);
   position: sticky;
-  left: 94.5%;
+  left: 93.5%;
   bottom: 6rem;
-  cursor: pointer;
-  
+  cursor: pointer;  
 }
-
-
 #msgBox{
   width: fit-content;
   height: fit-content;
   padding: 10px;
   position: sticky;
-  left: 80%;
+  left: 79%;
   bottom: 7.9rem;
   background-color: black;
   color: white;

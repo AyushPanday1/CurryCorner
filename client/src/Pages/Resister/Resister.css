@@ -6,13 +6,12 @@
     background-image: url(https://i.pinimg.com/originals/5e/f9/d7/5ef9d70b03d22b1acd145b9422d3a33f.gif);
     background-repeat: no-repeat;
     background-size: 50% 100%;
-    background-color: #FFFFFF;
+    background-color:rgb(255, 255, 255);
 }
 
 .userResister {
     padding: 2%;
     margin-top: 2%;
-    /* border: 2px solid red; */
     width: 35%;
     height: fit-content;
     color: black;
@@ -20,8 +19,9 @@
     margin-left: 58%;
     text-align: end;
     border-radius: 10px;
-    background-color: rgb(233, 233, 233);
-    box-shadow: 10% black;
+    background-color:rgb(255, 255, 255);
+
+    box-shadow: rgba(0, 0, 0, 0.08) 80px 80px 800px;
 
 }
 
@@ -44,22 +44,22 @@
 }
 
 #logins {
-    margin-inline: 44%;
+    margin-inline: 32%;
     margin-block: 50px;
 
 }
 
 #btn {
-    margin-right: 25%;
+    margin-right: 12%;
     background-color: #115fbc;
     margin-block: 6%;
-    border: 1px solid rgb(19, 66, 209);
+    border: 1px solid rgb(124, 137, 175);
     width: 50%;
 
 }
 
 #btn:hover {
-    background-color: #2679dd;
+    background-color: #040991;
 }
 
 #title {
