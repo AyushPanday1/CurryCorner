@@ -8,7 +8,15 @@ display: flex;
 justify-content: flex-start;
 flex-wrap: wrap;
 }
-
+.tag{
+    margin-left: 11rem;
+    font-family: 'Aboreto', cursive;
+    font-size: 40px;
+    margin-top: 8rem;
+    background-color:rgb(255, 255, 255);
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.08) 80px 80px 800px;
+}
 
 
 

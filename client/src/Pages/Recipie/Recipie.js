@@ -39,6 +39,7 @@ function Recipie() {
     <div>
       <Navbar />
       <Chat />
+      <div className="tag">best recipes for you</div>
       <Video videodata={videodata} />
       
       <div id="msgBox" style={msg}>
