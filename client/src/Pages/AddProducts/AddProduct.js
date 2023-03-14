@@ -26,8 +26,6 @@ function AddProduct() {
         options.image = shopImage
         options.catogary = rating
 
-        console.log(options.shopId)
-
         let config = {
             headers: {
                 'content-type': 'multipart/form-data'

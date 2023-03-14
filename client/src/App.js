@@ -11,6 +11,8 @@ import ShopProduct from "./Pages/shop-product/ShopProduct"
 import Cart from './Pages/Cart/Cart';
 import About from './Pages/About/About';
 import Recipie from './Pages/Recipie/Recipie';
+import AddRecipi from './Pages/AddRecipi/AddRecipi';
+
 
 function App() {
   return (
@@ -28,7 +30,7 @@ function App() {
         </Route>
         <Route path='about' element={<About />} />
         <Route path='recipie' element={<Recipie />} />
-        
+        <Route path="addrecipi" element={<AddRecipi />} />
       </Routes>
     </BrowserRouter>
   );

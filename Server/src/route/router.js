@@ -6,7 +6,7 @@ const { createUser, loginUser, getUser, updateUser } = require("../controller/us
 const { createCart, updateCart, getCart, deleteCart } = require("../controller/cartcontroller")
 const { createOrder, updateOrder } = require("../controller/ordercontroller")
 const { newComment, getComments, deleteComment } = require("../controller/commentcontroller")
-
+const { createRecipi, getRecipi } = require("../controller/recipiController")
 //====================== User Api =========================//
 
 router.post("/user", createUser)
@@ -60,7 +60,10 @@ router.get("/comment/:shopId", getComments)
 router.put("/comment/:commentId", deleteComment)
 
 
+//===========================Recipi===========================//
 
+router.post("/recipi", createRecipi)
+router.get("/recipi", getRecipi)
 
 
 

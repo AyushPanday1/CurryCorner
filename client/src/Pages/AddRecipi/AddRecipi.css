@@ -1,0 +1,32 @@
+#recipiBox {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    margin: 5rem auto;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 1rem;
+    background-color: rgb(33, 33, 223);
+}
+
+.input12 {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+#recipiBox div>span {
+    font-weight: bold;
+    margin-right: 1rem;
+    color: white;
+}
+
+
+#title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-inline: 1rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
