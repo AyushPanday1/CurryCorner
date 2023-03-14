@@ -29,10 +29,12 @@
     width: fit-content;
     /* border: 2px solid red; */
     color: white;
-    margin-inline: 65%;
+    /* margin-inline: 65%; */
     margin-top: 0px;
+    margin-left:65rem;
     color: black;
     text-align: center;
+    /* border: 2px solid red; */
 }
 
 .inputs {

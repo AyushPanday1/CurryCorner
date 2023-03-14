@@ -10,25 +10,30 @@ const { createRecipi, getRecipi } = require("../controller/recipiController")
 //====================== User Api =========================//
 
 router.post("/user", createUser)
+
 router.post("/loginUser", loginUser)
+
 router.get("/user/:userId", getUser)
+
 router.put("/user/:userId", updateUser)
-
-
-
 
 //===================== Shop APIs ==========================//
 
 router.post("/shop", createShop)
+
 router.put("/shop/:shopId", UpdateeShop)
+
 router.get("/shop", getShop)
 
 
 //===================== Product APIs ==========================//
 
 router.post("/product", createProduct)
+
 router.put("/product/:productId", updateProuct)
+
 router.get("/product", getProduct)
+
 router.get("/product/:shopId", getProductbyShopId)
 
 
@@ -41,8 +46,6 @@ router.put("/users/:userId/cart", updateCart)
 router.get("/users/:userId/cart", getCart)
 
 router.delete("/users/:userId/cart", deleteCart)
-
-
 
 
 //===================== Order APIs ==========================//
@@ -63,6 +66,7 @@ router.put("/comment/:commentId", deleteComment)
 //===========================Recipi===========================//
 
 router.post("/recipi", createRecipi)
+
 router.get("/recipi", getRecipi)
 
 

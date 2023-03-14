@@ -57,7 +57,7 @@ function Resister() {
                 <h2>YOUR WISH OUR RESPONSIBILITY</h2>
             </div>
             <div id="userResister">
-                <h1 id='resis'>Register</h1>
+                <h1 id='resis'>Register User</h1>
             </div>
             <div className="userResister">
                 <form onSubmit={resisterUser}>
