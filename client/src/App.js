@@ -10,6 +10,7 @@ import Home from './Pages/HomePage/Home';
 import ShopProduct from "./Pages/shop-product/ShopProduct"
 import Cart from './Pages/Cart/Cart';
 import About from './Pages/About/About';
+import Recipie from './Pages/Recipie/Recipie';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path=':shopId' element={<ShopProduct />} />
         </Route>
         <Route path='about' element={<About />} />
+        <Route path='recipie' element={<Recipie />} />
         
       </Routes>
     </BrowserRouter>

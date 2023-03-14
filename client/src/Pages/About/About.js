@@ -7,6 +7,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 function About() {
   const [state] = useState({
     title: "Hello everyone",
+    titleTwo:"Contact us for"
   });
 
   return (
@@ -22,6 +23,9 @@ function About() {
         <h2>
           <div className="title">{state.title}</div>
         </h2>
+        <h2>
+          <div className="titleTwo ">{state.titleTwo}</div>
+        </h2>
 
         <div className="text">
           <Typewriter
@@ -30,9 +34,10 @@ function About() {
               loop: true,
               delay: 40,
               strings: [ 
-                "I am Aman Prajapati",
-                "I am Deeptirtha Mukherjee",
-                "Contact us for your DREAM project"
+                "Web App Development",
+                "UX/UI Design",
+                "Full-stack Development",
+                "Your DREAM project"
 
               ],
             }}
@@ -43,7 +48,7 @@ function About() {
       <div className="pic-part">
 
         <div>
-            <img src="DSC_0920.jpg" alt="" className="pro-img" />
+            <img src="Deeptirtha.jpeg" alt="" className="pro-img" />
             <h3 className="tex deep">Deeptirtha Mukherjee</h3>
             <div className="ico">
             <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox"><i className="fa-solid fa-envelope ic-chnage1" /></a>

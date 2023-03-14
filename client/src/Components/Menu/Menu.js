@@ -18,7 +18,7 @@ function Menu({ sideBurger }) {
         <div className='menu' style={(sideBurger) ? { right: "-17rem" } : { right: "0rem" }}>
             <ul>
                 <li><NavLink to='/home'>Home</NavLink></li>
-                <li><NavLink to='/product'>Share your recipe</NavLink></li>
+                <li><NavLink to='/recipie'>Share your recipe</NavLink></li>
                 {(shopIdPresent) ? <li><NavLink to='/addshop'>Add Shop</NavLink></li> : <li><NavLink to='/addproduct'>Add Product</NavLink></li>}
                 <li><NavLink to='/cart'>Cart</NavLink></li>
                 <li><NavLink to='/About'>About us</NavLink></li>
