@@ -25,6 +25,7 @@
   animation-duration: 1.2s;
   color: red;
   margin-left: 2rem;
+  font-family: "Aboreto", cursive;
 }
 .titleTwo {
   animation-name: moveLeft;

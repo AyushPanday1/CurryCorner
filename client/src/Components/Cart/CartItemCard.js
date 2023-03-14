@@ -74,7 +74,7 @@ function CartItemCard({ item, cartId }) {
                 <img src={element.productImg} alt="tp" />
               </div>
 
-              <div className="title">
+              <div className="title-of-ele">
                 <h2>{element.productId.title}</h2>
               </div>
               <div className="cart-change">
