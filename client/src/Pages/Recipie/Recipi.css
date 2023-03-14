@@ -8,3 +8,37 @@ display: flex;
 justify-content: flex-start;
 flex-wrap: wrap;
 }
+
+
+
+
+
+
+#addRecipiIcon{
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background-color: rgb(71, 219, 125);
+  position: sticky;
+  left: 94.5%;
+  bottom: 6rem;
+  cursor: pointer;
+  
+}
+
+
+#msgBox{
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  position: sticky;
+  left: 80%;
+  bottom: 7.9rem;
+  background-color: black;
+  color: white;
+  border-radius:8px;
+}

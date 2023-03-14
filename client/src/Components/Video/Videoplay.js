@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 
 function Videoplay({videodata}) {
   return (
-    <Card className="vid-body">
+    <div className="vid-body" >
       {videodata.map((item) => {
         return (
           <div className="every-vid">
@@ -35,7 +35,7 @@ function Videoplay({videodata}) {
           </div>
         );
       })}
-    </Card>
+    </div>
   );
 }
 

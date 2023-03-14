@@ -1,33 +1,40 @@
-
-.likediv{
+.likediv {
     display: flex;
     align-items: center;
     width: 108%;
 }
-.side{
+
+.side {
     display: flex;
     flex-direction: column;
     background-color: #e1dbdb;
 }
-.view{
+
+.view {
     margin-left: 20px;
 }
-.like{
+
+.like {
     margin-left: 8rem;
 }
-.vid-body{
+
+.vid-body {
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
     border: 2px solid rgb(49, 7, 92);
 }
-.every-vid{
+
+.every-vid {
     margin-top: 5rem;
 }
-.likedivvv{
+
+.likedivvv {
     margin-left: 8.5rem;
     width: 55%;
 }
-.every-vid{
+
+.every-vid {
     border: 2px solid red;
     width: 20.3rem;
+    margin: 2rem;
 }
