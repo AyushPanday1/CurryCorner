@@ -17,6 +17,8 @@ function Resister() {
     const [pincode, setPincode] = useState("")
 
 
+    const [checkImg, setCheckImg] = useState(false)
+
     function validateEmail(email) {
         let regex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
         return (typeof (email) != "string" || regex.test(email)) ? true : false
@@ -35,8 +37,8 @@ function Resister() {
 
     const resisterUser = (e) => {
         e.preventDefault();
-
-        if(Object.keys(pic).length==0){return alert("Profile image mandatory !")}
+   
+        if(!checkImg){return alert("Profile file is mandatory !")}
         if (String(phone).length !== 10 || !isValidMobile(phone)) { return alert("Please enter valid phone number && start from 6-9 !") }
         if (String(pincode).length !== 6) { return alert("Please enter valid Pincode !") }
         if (!validateEmail(email)) { return alert("Please enter valid Email !") }
@@ -72,6 +74,7 @@ function Resister() {
     }
 
     const displayDP = (e) => {
+        setCheckImg(true)
         e.preventDefault()
         setPic(e.target.files[0])
         let imgFile = e.target.files[0]
