@@ -12,9 +12,37 @@ function Resister() {
     const [password, setPassword] = useState("")
     const [pic, setPic] = useState({})
 
+    const [street, setStreet] = useState("")
+    const [city, setCity] = useState("")
+    const [pincode, setPincode] = useState("")
+
+
+    function validateEmail(email) {
+        let regex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
+        return (typeof (email) != "string" || regex.test(email)) ? true : false
+    }
+
+    function validPassword(password) {
+        let regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
+        return regex.test(password);
+    }
+
+    function isValidMobile(phone) {
+        let regex = /^[6-9][0-9]{9}$/
+        return regex.test(phone)
+    }
+
 
     const resisterUser = (e) => {
         e.preventDefault();
+
+        if(Object.keys(pic).length==0){return alert("Profile image mandatory !")}
+        if (String(phone).length !== 10 || !isValidMobile(phone)) { return alert("Please enter valid phone number && start from 6-9 !") }
+        if (String(pincode).length !== 6) { return alert("Please enter valid Pincode !") }
+        if (!validateEmail(email)) { return alert("Please enter valid Email !") }
+        if (!validPassword(password)) { return alert("Please enter valid Password && it must contain 8 char with upercase, lowercase, special char and number !") }
+
+
         const formData = new FormData();
         formData.append("file", pic)
         formData.append("fileName", pic.name)
@@ -23,12 +51,19 @@ function Resister() {
                 'content-type': 'multipart/form-data'
             },
         };
+
+
         const options = {
             name: name,
             email: email,
-            phone:phone,
+            phone: phone,
             password: password,
-            profile: pic
+            profile: pic,
+            address: {
+                street,
+                city,
+                pincode
+            }
         }
         axios.post("http://localhost:3001/user", options, config).then((res) => {
             alert("Account has created succesfully")
@@ -56,9 +91,9 @@ function Resister() {
             <div className='left'>
                 <h2>YOUR WISH OUR RESPONSIBILITY</h2>
             </div>
-            <div id="userResister">
+            {/* <div id="userResister">
                 <h1 id='resis'>Register User</h1>
-            </div>
+            </div> */}
             <div className="userResister">
                 <form onSubmit={resisterUser}>
                     <div id="imageBox" className="eachInputBox">
@@ -82,6 +117,20 @@ function Resister() {
                         <span>Phone</span>
                         <input type="number" className='inputs' placeholder='Write your email' required value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
+
+                    <div className="resister-form">
+                        <span>Street</span>
+                        <input className='inputs' type="text" placeholder='Street...' value={street} onChange={(e) => setStreet(e.target.value)} />
+                    </div>
+                    <div className="resister-form">
+                        <span>City</span>
+                        <input className='inputs' type="text" placeholder='City...' value={city} onChange={(e) => setCity(e.target.value)} />
+                    </div>
+                    <div className="resister-form">
+                        <span>Pincode</span>
+                        <input className='inputs' type="number" placeholder='Pincode...' value={pincode} onChange={(e) => setPincode(e.target.value)} />
+                    </div>
+
                     <div className="resister-form">
                         <span>Password</span>
                         <input type="password" className='inputs' placeholder='Write your Password' required value={password} onChange={(e) => setPassword(e.target.value)} />

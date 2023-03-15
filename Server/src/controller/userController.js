@@ -14,14 +14,18 @@ const shopMode = require("../model/shopMode")
 const createUser = async (req, res) => {
 
     try {
-        const data = req.body
+        let data = req.body
+        data = JSON.parse(JSON.stringify(data));
+
         let files = req.files;
 
         let arrOfKeys = Object.keys(data)
         if (arrOfKeys.length == 0) { return res.status(400).send({ status: false, message: "Please enter your details !" }) }
         if (files.length == 0) { return res.status(400).send({ status: false, message: "Please upload profileImage !" }) }
 
+
         for (let i = 0; i < arrOfKeys.length; i++) {
+            if (arrOfKeys[i] == "address") { continue }
             data[arrOfKeys[i]] = data[arrOfKeys[i]].trim()
         }
 
@@ -43,20 +47,18 @@ const createUser = async (req, res) => {
         if (!validPassword(password)) { return res.status(400).send({ status: false, message: "Please enter valid password !" }) }
 
 
-        data.profileImage = await uploadFile(files[0])
-        let dataa = await axios.get(`https://api.ipify.org/?format=json`)
-        let location = await axios.get(`https://www.iplocate.io/api/lookup/${dataa.data.ip}`)
+        // data.profileImage = await uploadFile(files[0])
+        // let dataa = await axios.get(`https://api.ipify.org/?format=json`)
+        // let location = await axios.get(`https://www.iplocate.io/api/lookup/${dataa.data.ip}`)
 
-        let address = {
-
-        }
+        // let {street, city, pincode} = data.address;
 
 
-        address.state = location.data.subdivision
-        address.city = location.data.city
-        address.pincode = location.data.postal_code
+        // address.state = location.data.subdivision
+        // address.city = location.data.city
+        // address.pincode = location.data.postal_code
 
-        data.address = address
+        // data.address = address
 
 
         // if (!data.address) { return res.status(400).send({ status: false, message: "Please enter address !" }) }
@@ -112,14 +114,14 @@ const loginUser = async (req, res) => {
         let token = jwt.sign({ userId: userExist._id, email: userExist.email, phone: userExist.phone }, "zomato", { expiresIn: "1096h" })
 
         let option = {
-            userId : userExist,
-            token : token,
+            userId: userExist,
+            token: token,
         }
 
-        let shopId = await shopMode.findOne({email : email})
-        if(shopId){option.shopId = shopId._id}
+        let shopId = await shopMode.findOne({ email: email })
+        if (shopId) { option.shopId = shopId._id }
 
-        return res.status(200).send({ status: true, message: "User login successfull", data: option})
+        return res.status(200).send({ status: true, message: "User login successfull", data: option })
 
     } catch (err) {
         return res.status(500).send({ status: false, message: err.message })

@@ -1,5 +1,5 @@
 #bigBox {
-    height: 100vh;
+    height: 90%;
     border: 0.2px solid white;
     /* font-family: 'Aboreto', cursive; */
     /* font-family: 'Teko', sans-serif; */
@@ -11,7 +11,7 @@
 
 .userResister {
     padding: 2%;
-    margin-top: 2%;
+    margin-top: 0.5rem;
     width: 35%;
     height: fit-content;
     color: black;
@@ -20,8 +20,9 @@
     text-align: end;
     border-radius: 10px;
     background-color:rgb(255, 255, 255);
+    /* border: 1px solid black; */
 
-    box-shadow: rgba(0, 0, 0, 0.08) 80px 80px 800px;
+    box-shadow: rgba(0, 0, 0, 2) 80px 80px 800px;
 
 }
 
@@ -46,13 +47,13 @@
 }
 
 #logins {
-    margin-inline: 32%;
+    margin-inline: 40%;
     margin-block: 50px;
 
 }
 
 #btn {
-    margin-right: 12%;
+    margin-right: 20%;
     background-color: #115fbc;
     margin-block: 6%;
     border: 1px solid rgb(124, 137, 175);
