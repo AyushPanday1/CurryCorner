@@ -21,7 +21,7 @@ function Addcomment({shopId}) {
         window.location.reload(false)}
    
     )
-    .catch((err) => alert(err.message))
+    .catch((err) => alert(err.response.data.message) )
    }
 
 

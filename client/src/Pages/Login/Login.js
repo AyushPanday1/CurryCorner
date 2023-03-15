@@ -23,7 +23,7 @@ function Login() {
 			localStorage.setItem("shopId", res.data.data.shopId)
 			window.location.replace("/home")
 
-		}).catch((err) => alert(err.message))
+		}).catch((err) => { alert(err.response.data.message) })
 	}
 
 

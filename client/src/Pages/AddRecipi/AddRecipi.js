@@ -40,7 +40,7 @@ function AddRecipi() {
                 alert("Recipie added successfully")
                 window.location.replace("/recipie")
             }).catch((err) => {
-                alert(err.message)
+                alert(err.response.data.message) 
             })
     }
 

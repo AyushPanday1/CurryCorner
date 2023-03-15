@@ -17,7 +17,7 @@ function ProductCard({ product }) {
       .then((res) => {
         alert("Item added successfully");
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err.response.data.message) );
   }
 
   let userData = JSON.parse(localStorage.getItem("user"));

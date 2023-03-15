@@ -31,7 +31,7 @@ function Recipie() {
 
         setvideodata(responce.data.data);
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err.response.data.message) );
   }, []);
 
 

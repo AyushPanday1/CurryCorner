@@ -54,7 +54,7 @@ function AddShop() {
                 alert("Shop created Succesfully !")
                 navigation("/home", { replace: true })                          //can redirect to add products
             }).catch((err) => {
-                alert(err.message)
+                alert(err.response.data.message) 
                 navigation("/home", { replace: true })
             })
     }

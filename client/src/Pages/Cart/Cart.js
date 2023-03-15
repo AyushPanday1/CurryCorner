@@ -38,7 +38,7 @@ function Cart() {
         alert("Order placed 😍");
         window.location.replace("home");
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err.response.data.message) );
   }
 
   return (

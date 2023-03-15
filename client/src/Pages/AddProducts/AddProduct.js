@@ -37,7 +37,7 @@ function AddProduct() {
                 alert("Product has added 😎")
                 navigation(`/shopproduct/${options.shopId}`, { replace: true })     //window.location.replace(`/${a}`)                     //can redirect to add products
             })
-            .catch((err) => { alert(err.message) })
+            .catch((err) => { alert(err.response.data.message)  })
     }
 
     const displayImage = (e) => {

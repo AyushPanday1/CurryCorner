@@ -38,7 +38,7 @@ function ShopProduct() {
         Setshop(responce.data.shopDetail);
         Setaddress(responce.data.address);
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err.response.data.message) );
 
   }, []);
 
@@ -49,7 +49,7 @@ function ShopProduct() {
         SetComment(responce.data.data);
         console.log(responce.data.data);
       })
-      .catch((err) => alert(err.message));
+      .catch((err) =>alert(err.response.data.message) );
   }, []);
 
   return (

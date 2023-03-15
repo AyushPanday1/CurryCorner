@@ -21,7 +21,7 @@ function Home() {
       .then((responce) => {
         SetResto(responce.data.data);
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err.response.data.message) );
   }, []);
 
 

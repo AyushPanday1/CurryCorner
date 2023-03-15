@@ -15,7 +15,7 @@ function CartItemCard({ item, cartId }) {
       .then((res) => {
         window.location.reload(false);
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err.response.data.message) );
   }
 
   //add qty by 1
@@ -31,7 +31,7 @@ function CartItemCard({ item, cartId }) {
       .then((res) => {
         window.location.reload(false);
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err.response.data.message) );
   }
 
   //dlt item
@@ -48,7 +48,7 @@ function CartItemCard({ item, cartId }) {
         .then((res) => {
           window.location.reload(false);
         })
-        .catch((err) => alert(err.message));
+        .catch((err) => alert(err.response.data.message) );
     } else {
       window.location.reload(false);
     }
