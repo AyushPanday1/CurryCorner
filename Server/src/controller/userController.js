@@ -107,8 +107,6 @@ const loginUser = async (req, res) => {
 
         if (!userExist) { return res.status(404).send({ status: false, message: "User doesn't exists !" }) }
 
-        if (!validPassword(password)) { return res.status(400).send({ status: false, message: "Please enter valid password" }) }
-
         if (userExist.password != password) { return res.status(400).send({ status: false, message: "Please enter correct password" }) }
 
         let token = jwt.sign({ userId: userExist._id, email: userExist.email, phone: userExist.phone }, "zomato", { expiresIn: "1096h" })
