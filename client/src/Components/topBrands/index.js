@@ -3,6 +3,9 @@ import Slider from "react-slick";
 import NextArrow from "../carousel/nextArrow";
 import PrevArrow from "../carousel/prevArrow";
 import "./topBrands.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const topBrandsList = [
   {
@@ -53,9 +56,9 @@ const topBrandsList = [
 ];
 
 const settings = {
-  infinite: true,
-  slidesToShow: 5,
+  slidesToShow: 5.5,
   slidesToScroll: 2,
+  infinite: true,
   autoplay: true,
   autoplaySpeed: 3000,
   nextArrow: <NextArrow />,

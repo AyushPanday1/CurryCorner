@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from "axios"
 import Navbar from '../../Components/Navbar/Navbar'
 import "./AddRecipi.css"
+import Chat from '../../Components/Chat/Chat'
 
 function AddRecipi() {
 
@@ -55,8 +56,9 @@ function AddRecipi() {
 
 
     return (
-        <>
+        <div>
             <Navbar />
+            <div className='classname'>
             <div id='recipiBox'>
                 <span id='title'>Add your Recipie</span>
                 <input type="text" className='input12' placeholder='Title...' value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -64,7 +66,9 @@ function AddRecipi() {
                 <div className='input12' ><span>Video :</span><input type="file" accept="video/*" onChange={(e) => displayVideo(e)} /></div>
                 <button className="btn btn-outline-success" id='btnAddShop' onClick={createRecipi} type="submit">Add</button>
             </div>
-        </>
+            </div>
+            <Chat />
+        </div>
     )
 }
 

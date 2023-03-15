@@ -4,6 +4,9 @@ import DeliveryItem from "./deliveryItem";
 import Slider from "react-slick";
 import PrevArrow from "../carousel/nextArrow";
 import NextArrow from "../carousel/prevArrow";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const deliveryItems = [
   {
