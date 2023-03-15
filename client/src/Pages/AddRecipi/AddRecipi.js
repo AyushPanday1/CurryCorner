@@ -56,7 +56,7 @@ function AddRecipi() {
 
 
     return (
-        <div>
+        <div id='addrecipibigbix'>
             <Navbar />
             <div className='classname'>
             <div id='recipiBox'>
