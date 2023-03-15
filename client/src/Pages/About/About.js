@@ -52,7 +52,7 @@ function About() {
               <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox"><i class="fa-regular fa-envelope"></i></a>
               <a href="https://www.linkedin.com/in/deeptirtha-mukherjee-7b5040249/"><i className="fa-brands fa-linkedin-in ic-chnage" /></a>
               <a href="https://www.instagram.com/dee_tirtha/"><i className="fa-brands fa-instagram  ic-chnage" /></a>
-              <a href="https://www.instagram.com/dee_tirtha/"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://chat.whatsapp.com/JIZN0tnffpKCFBMfQ2QScU"><i class="fa-brands fa-whatsapp"></i></a>
              
             </div>
 
@@ -65,7 +65,7 @@ function About() {
               <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#sent?compose=GTvVlcSBmlxrdltbdcsgPXTFglmhWDMwSjzMjsfNvhLpCmNgMBbLFzxgCwzDKxffvdPRvlrLLLvbW"><i class="fa-regular fa-envelope"></i></a>
               <a href="https://www.linkedin.com/in/aman-prajapat-249a53225"><i className="fa-brands fa-linkedin-in ic-chnage" /></a>
               <a href="https://instagram.com/amanprajapat08278?igshid=ZDdkNTZiNTM="><i className="fa-brands fa-instagram  ic-chnage" /></a>
-              <a href="https://wa.me/qr/BLA3EW44BNW6G1"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://chat.whatsapp.com/JIZN0tnffpKCFBMfQ2QScU"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
