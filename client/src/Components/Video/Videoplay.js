@@ -24,15 +24,23 @@ function Videoplay({ videodata }) {
               </Video>
 
               <div className="side">
-                <div className="likedivvv">
-                  <p>{item.title}</p>
+
+                <div className="dpAndtitleBox">
+                  <div className="dpBox">
+                    <img src={item.userId.profileImage} id="dp" alt="err" />
+                  </div>
+                  <div className="likedivvv">
+                    <p>{item.title}</p>
+                  </div>
                 </div>
 
+
                 <div className="likediv">
+                  <div className="like"><i class="fa-regular fa-thumbs-up"></i>{Math.ceil(Math.random() * 10)}k</div>
                   <div className="view">
                     {Math.ceil(Math.random() * 100)}k viewes
                   </div>
-                  <div className="like">{Math.ceil(Math.random() * 10)}k<i class="fa-solid fa-heart"/></div>
+
                 </div>
               </div>
             </div>

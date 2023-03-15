@@ -29,7 +29,7 @@ const createRecipi = async (req, res) => {
 
 const getRecipi = async (req, res) => {
     try {
-        let result = await recipiModel.find()
+        let result = await recipiModel.find().populate({path:"userId", select:{profileImage:1}})
         res.status(200).send({ status: true, data: result })
     } catch (err) {
         res.status(500).send({ status: false, data: err.message })

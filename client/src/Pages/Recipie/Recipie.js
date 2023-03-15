@@ -13,10 +13,10 @@ function Recipie() {
   useEffect(() => {
     setTimeout(() => {
       setMsg()
-    }, 3000)
+    }, 5000)
     setTimeout(() => {
       setMsg({ display: "none" })
-    }, 7000)
+    }, 13000)
   }, [])
 
 

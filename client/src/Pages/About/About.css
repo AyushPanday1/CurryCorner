@@ -27,6 +27,7 @@
   margin-left: 2rem;
   font-family: "Aboreto", cursive;
 }
+
 .titleTwo {
   animation-name: moveLeft;
   animation-duration: 1s;
@@ -34,12 +35,14 @@
   color: #040644;
   font-family: "Aboreto", cursive;
 }
+
 .text {
   font-size: 40px;
   color: #000000;
   margin-bottom: 20px;
   margin-left: 4rem;
 }
+
 @keyframes moveRight {
   0% {
     opacity: 0;
@@ -63,51 +66,63 @@
     transform: translate(0);
   }
 }
+
 .pic-part {
+  
+  text-align: center;
   margin-left: 10rem;
 }
 
 .pro-img {
-  height: 10rem;
-  width: 10rem;
-  margin-left: 2rem;
+  
+  height: 13rem;
+  width: 13rem;
+  /* margin-left: 2rem; */
   border-radius: 50%;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 }
+
 .tex {
   font-size: 20px;
   color: #ffffff;
-  margin-bottom: 20px;
   font-family: "Aboreto", cursive;
 }
-.aman {
-  margin-left: 2rem;
-}
-.deep {
-  margin-left: 0px;
-}
+
+
+
+
+
 .ico {
   color: white;
 }
-.ic-chnage1 {
-  margin-left: 2.5rem;
-}
-.ic-chnage {
-  margin-left: 4rem;
-}
+
+
 
 a:link {
   text-decoration: none;
 }
 
-a:visited {
-  text-decoration: none;
+
+.ico>a {
+  color: white;
+  margin: 0.2rem;
+  padding: 3px 6px 3px 6px;
+  border-radius: 5px;
+  font-size: 1.3rem;
 }
 
-a:hover {
-  text-decoration: none;
+
+.pic-part>div {
+  margin: 3rem;
+  text-align: center;
 }
 
-a:active {
-  text-decoration: none;
+
+.ico>a:hover {
+  background-color: white;
+  color: black;
+}
+
+.pic-part div >h3{
+  margin-top: 0.4rem;
 }
