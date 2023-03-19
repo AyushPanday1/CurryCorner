@@ -52,7 +52,7 @@
     pic: { type: String }
 }
 ```
-3.Card Model : 
+3.Cart Model : 
 ```yaml
     {
         userId:{
