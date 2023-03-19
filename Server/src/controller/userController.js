@@ -4,7 +4,6 @@ const { uploadFile } = require("../aws")
 const jwt = require("jsonwebtoken")
 const axios = require("axios")
 const { validateEmail, validPassword, isValidMobile, isValidname } = require("../validation/validation")
-const { options } = require("../route/router")
 const shopMode = require("../model/shopMode")
 
 
@@ -47,32 +46,17 @@ const createUser = async (req, res) => {
         if (!validPassword(password)) { return res.status(400).send({ status: false, message: "Please enter valid password !" }) }
 
 
-        // data.profileImage = await uploadFile(files[0])
-        // let dataa = await axios.get(`https://api.ipify.org/?format=json`)
-        // let location = await axios.get(`https://www.iplocate.io/api/lookup/${dataa.data.ip}`)
-
-        // let {street, city, pincode} = data.address;
-
-
-        // address.state = location.data.subdivision
-        // address.city = location.data.city
-        // address.pincode = location.data.postal_code
-
-        // data.address = address
-
-
-        // if (!data.address) { return res.status(400).send({ status: false, message: "Please enter address !" }) }
-        // data.address = JSON.parse(data.address)
-
-        // if (data.address) {
-        //     let { street, city, pincode } = data.address
-
-        //     if (!street || typeof (street) != "string") { return res.status(400).send({ status: false, message: "shipping street is mandatory & valid !" }) }
-        //     if (!city || typeof (city) != "string") { return res.status(400).send({ status: false, message: "shipping city is mandatory & valid !" }) }
-        //     if (!pincode || typeof (pincode) != "number" || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, message: "Please enter shipping pincode & should be valid !" }) }
-        // }
+        data.profileImage = await uploadFile(files[0])
 
         const result = await userModel.create(data)
+
+        let cartData = {
+            userId: result._id,
+            items: [],
+            totalPrice: 0,
+            totalItems: 0
+        }
+        await CartModel.create(cartData)
 
         res.status(201).send({ status: true, message: "User created successfully", data: result })
 
@@ -231,16 +215,7 @@ const updateUser = async (req, res) => {
     }
 }
 
-const location = async function (req, res) {
-    let data = await axios.get(`https://api.ipify.org/?format=json`)
-    let location = await axios.get(`https://www.iplocate.io/api/lookup/${data.data.ip}`)
-
-    // console.log(data.data)
-
-    res.send({ data: location.data })
-
-}
 
 
 
-module.exports = { createUser, loginUser, getUser, updateUser, location }
+module.exports = { createUser, loginUser, getUser, updateUser }
