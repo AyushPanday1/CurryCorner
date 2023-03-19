@@ -22,7 +22,7 @@
 => Models
 
 1.User Model :
-{
+`{
     name: { type: String, require: true },
     email: { type: String, require: true, unique: true },
     image: { type: String, require: true },
@@ -34,7 +34,7 @@
         city: { type: String, trim: true },
         pincode: { type: Number, require: true, trim: true }
     }
-}
+}`
 
 2.Shop Model :
 {
