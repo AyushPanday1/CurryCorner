@@ -74,9 +74,11 @@
         totalPrice:Number,
         totalItems:Number
     }
-    ```
+    
+```
 
 4. Order Model : 
+
 ```yaml
 {
     userId: { type: ObjectId, ref: "User", require: true },
