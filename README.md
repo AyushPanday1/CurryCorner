@@ -38,6 +38,7 @@
 }
 ```
 2.Shop Model :
+```yaml
 {
     name: { type: String, required: true },
     email: { type: String },
@@ -50,8 +51,9 @@
     rating: { type: Number },
     pic: { type: String }
 }
-
+```
 3.Card Model : 
+```yaml
     {
         userId:{
             type:mongoose.Schema.Types.ObjectId,
@@ -72,8 +74,10 @@
         totalPrice:Number,
         totalItems:Number
     }
+    ```
 
 4. Order Model : 
+```yaml
 {
     userId: { type: ObjectId, ref: "User", require: true },
   items: [{
@@ -88,8 +92,10 @@
   deletedAt: { type: Date },
   isDeleted: { type: Boolean, default: false }
 }
+```
 
 5. Comment Model : 
+```yaml
 {
     name: {
         type: String,
@@ -109,8 +115,9 @@
         required: true
     }
 }
-
+```
 6. Recipe Model : 
+```yaml
 {
     title: String,
     userId: {
@@ -121,7 +128,7 @@
     video: String
 }
 
-
+```
 APIs :
 
 //====================== User Api =========================//
