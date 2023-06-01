@@ -14,8 +14,8 @@
     text-decoration: none;
 }
 .nav-logo{
-    height: 55px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
 }
 #navbarNav {
@@ -41,6 +41,7 @@
     z-index: 2;
     margin-left: 11rem;
     box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
+    
     
 }
 

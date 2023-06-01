@@ -6,7 +6,7 @@ import ShopCard from '../../Components/ShopCard/ShopCard'
 import axios from 'axios';
 import DeliveryColletions from '../../Components/deliveryCollections'
 import TopBrands from './../../Components/topBrands/index';
-
+import Footer from '../../Components/footer/footer'
 
 
 
@@ -33,6 +33,7 @@ function Home() {
       <TopBrands/>
       <Chat />
       <ShopCard resto={resto} />
+      <Footer />
     </div>
   )
 }

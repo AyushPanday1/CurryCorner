@@ -37,8 +37,8 @@ function Resister() {
 
     const resisterUser = (e) => {
         e.preventDefault();
-   
-        if(!checkImg){return alert("Profile file is mandatory !")}
+
+        if (!checkImg) { return alert("Profile file is mandatory !") }
         if (String(phone).length !== 10 || !isValidMobile(phone)) { return alert("Please enter valid phone number && start from 6-9 !") }
         if (String(pincode).length !== 6) { return alert("Please enter valid Pincode !") }
         if (!validateEmail(email)) { return alert("Please enter valid Email !") }
@@ -70,7 +70,7 @@ function Resister() {
         axios.post("http://localhost:3001/user", options, config).then((res) => {
             alert("Account has created succesfully")
             window.location.replace("/")
-        }).catch((err) => alert(err.response.data.message) )
+        }).catch((err) => alert(err.response.data.message))
     }
 
     const displayDP = (e) => {
@@ -90,58 +90,71 @@ function Resister() {
 
 
     return (
-        <div id='bigBox'>
-            <div className='left'>
-                <h2>YOUR WISH OUR RESPONSIBILITY</h2>
-            </div>
-            {/* <div id="userResister">
-                <h1 id='resis'>Register User</h1>
-            </div> */}
-            <div className="userResister">
-                <form onSubmit={resisterUser}>
-                    <div id="imageBox" className="eachInputBox">
-                        <div id="DPBOX">
-                            <img id="profilePicture" src={profile} alt='Error' />
-                            <label htmlFor='addDP'><i className="DPIcon fa-solid fa-camera"></i></label>
+        <div className='main-div1'>
+            <div className="container h-100">
+                
+                <div className="d-flex justify-content-center h-100">
+                
+                    <div className="user_card1">
+                       
+                        <div className="d-flex justify-content-center">
+                        <div className="brand_logo_container1">
+								<img src="https://th.bing.com/th/id/OIP.GyWqMDYf4DCTJM4aOY5oIgHaHa?pid=ImgDet&rs=1" className="brand_logo1" alt="Logo" />
+							</div>
+                            <div className="d-flex justify-content-center form_container1">
+                                <form onSubmit={resisterUser}>
+                              
+                                    <div id="imageBox" className="eachInputBox">
+                                        <div id="DPBOX">
+                                           
+                                            <label htmlFor='addDP'> <img src='https://th.bing.com/th/id/OIP.ZJZJjEmvf94Oqv0_PJcvmAHaHa?pid=ImgDet&rs=1' alt='Error' />
+                                          
+                                            </label>
+                                        </div>
+                                        <input type="file" id='addDP' alt='erorr' style={{ display: "none" }} onChange={(e) => displayDP(e)} />
+                                    </div>
+
+
+                                    <div className="resister-form">
+
+                                        <input type="text" className='inputs' placeholder='Name...' required value={name} onChange={(e) => setName(e.target.value)} />
+                                    </div>
+                                    <div className="resister-form">
+
+                                        <input type="email" className='inputs' placeholder='Email...' required value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    </div>
+                                    <div className="resister-form">
+
+                                        <input type="number" className='inputs' placeholder='Phone No. ...' required value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                    </div>
+
+                                    <div className="resister-form">
+
+                                        <input className='inputs' type="text" placeholder='Street...' value={street} onChange={(e) => setStreet(e.target.value)} />
+                                    </div>
+                                    <div className="resister-form">
+
+                                        <input className='inputs' type="text" placeholder='City...' value={city} onChange={(e) => setCity(e.target.value)} />
+                                    </div>
+                                    <div className="resister-form">
+
+                                        <input className='inputs' type="number" placeholder='Pincode...' value={pincode} onChange={(e) => setPincode(e.target.value)} />
+                                    </div>
+
+                                    <div className="resister-form">
+
+                                        <input type="password" className='inputs' placeholder='Password...' required value={password} onChange={(e) => setPassword(e.target.value)} />
+                                    </div>
+
+                                   
+
+                                    <button type="submit" id='btn' className="btn btn-primary">Create Account</button>
+                                    <div className='d-flex justify-content-center links ele'>Already have an account?</div><a id='logins' href='/'>Login</a>
+                                </form>
+                            </div>
                         </div>
-                        <input type="file" id='addDP' alt='erorr' style={{ display: "none" }} onChange={(e) => displayDP(e)} />
                     </div>
-
-
-                    <div className="resister-form">
-                        <span>Name</span>
-                        <input type="text" className='inputs' placeholder='Write your last name' required value={name} onChange={(e) => setName(e.target.value)} />
-                    </div>
-                    <div className="resister-form">
-                        <span>Email</span>
-                        <input type="email" className='inputs' placeholder='Write your email' required value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <div className="resister-form">
-                        <span>Phone</span>
-                        <input type="number" className='inputs' placeholder='Write your email' required value={phone} onChange={(e) => setPhone(e.target.value)} />
-                    </div>
-
-                    <div className="resister-form">
-                        <span>Street</span>
-                        <input className='inputs' type="text" placeholder='Street...' value={street} onChange={(e) => setStreet(e.target.value)} />
-                    </div>
-                    <div className="resister-form">
-                        <span>City</span>
-                        <input className='inputs' type="text" placeholder='City...' value={city} onChange={(e) => setCity(e.target.value)} />
-                    </div>
-                    <div className="resister-form">
-                        <span>Pincode</span>
-                        <input className='inputs' type="number" placeholder='Pincode...' value={pincode} onChange={(e) => setPincode(e.target.value)} />
-                    </div>
-
-                    <div className="resister-form">
-                        <span>Password</span>
-                        <input type="password" className='inputs' placeholder='Write your Password' required value={password} onChange={(e) => setPassword(e.target.value)} />
-                    </div>
-
-                    <button type="submit" id='btn' className="btn btn-primary">Create Account</button>
-                    <a id='logins' href='/'>Login</a>
-                </form>
+                </div>
             </div>
         </div>
     )

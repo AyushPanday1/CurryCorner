@@ -1,63 +1,179 @@
-#bigBox {
-    height: 90%;
-    border: 0.2px solid white;
-    /* font-family: 'Aboreto', cursive; */
-    /* font-family: 'Teko', sans-serif; */
-    background-image: url(https://i.pinimg.com/originals/5e/f9/d7/5ef9d70b03d22b1acd145b9422d3a33f.gif);
-    background-repeat: no-repeat;
-    background-size: 50% 100%;
-    background-color:rgb(255, 255, 255);
-}
-
 .userResister {
-    padding: 2%;
-    margin-top: 0.5rem;
-    width: 35%;
-    height: fit-content;
-    color: black;
-    font-weight: bold;
-    margin-left: 58%;
-    text-align: end;
-    border-radius: 10px;
-    background-color:rgb(255, 255, 255);
-    /* border: 1px solid black; */
-
-    box-shadow: rgba(0, 0, 0, 2) 80px 80px 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100vw;
+    background-image: url('https://png.pngtree.com/back_origin_pic/03/89/87/ac7df65bc8adc85eaebe85c361338718.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
-#userResister {
-    width: fit-content;
-    /* border: 2px solid red; */
-    color: white;
-    /* margin-inline: 65%; */
-    margin-top: 0px;
-    margin-left:65rem;
-    color: black;
+.userResister p {
+    margin-top: 5px;
+    color: #9cecec;
+    
+}
+
+.wrapper {
+    height: 90vh;
+    width: 45vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+.main-div1 {
+    display: flex;
+    justify-content: center;
+    background-image: url("https://cdn.wallpapersafari.com/26/92/0KH5pV.jpg");
+    height: 44.6rem;
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+
+
+.brand_logo_container1 {
+    position: absolute;
+    height: 85px;
+    width: 85px;
+    top: -1px;
+    border-radius: 50%;
+    background: #d0dcb6;
+    padding: 2px;
     text-align: center;
-    /* border: 2px solid red; */
+    margin-top: 25px;
+}
+
+.brand_logo1 {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+/* 
+.brand_logo_container {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: -50px;
+    border-radius: 50%;
+    background: #d0dcb6;
+    padding: 2px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 1px solid white;
+} */
+
+.form_container1 {
+    margin-top: 35px;
+    justify-content: center;
+}
+
+.form_container1 h2{
+    font: 10px;
+    display: flex;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.login_btn {
+    width: 70%;
+    background: #c0392b;
+    color: white;
+
+    border-radius: 7px;
+}
+
+.login_btn:focus {
+    border: 1px solid black;
+    box-shadow: none;
+    outline: 0px;
+}
+
+.login_container {
+    padding: 0 2rem;
+}
+
+.input {
+    height: 20px;
+    width: 7cm;
+    margin: 7px;
+
+    border-radius: 7px;
+}
+
+.mt-4 {
+    margin-top: 30px;
+    padding: auto;
+}
+
+#loginBtn:hover{
+    border: 1px solid black;
+}
+
+
+
+
+.wrapper>h2 {
+    color: #171097;
+    text-align: center;
+    margin: 2.5rem 0;
+    font-size: 36px;
+}
+
+.user_card1 {
+
+    height: 550px;
+    width: 350px;
+    margin-top: 70px;
+    background: #9cecec;
+    border-radius: 5px;
 }
 
 .inputs {
-    height: 30px;
+    height: 35px;
     padding: 1px;
     border-radius: 5px;
     margin: 8px;
-    width: 70%;
+    width: 100%;
 }
 
 #logins {
     margin-inline: 40%;
     margin-block: 50px;
+    
+    color: black;
 
 }
 
 #btn {
-    margin-right: 20%;
-    background-color: #115fbc;
-    margin-block: 6%;
-    border: 1px solid rgb(124, 137, 175);
-    width: 50%;
+    outline: none;
+    background-color: 040991;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.5rem 1.25rem;
+    font-size: 18px;
+    cursor: pointer;
+    justify-content: center;
+    border: 1px solid transparent;
+    margin-left: 25px;
+    margin-top: 7px;
 
 }
 
@@ -81,22 +197,14 @@
 
 
 
-.Profile {
-    height: 100vh;
-    border: 0.2px solid white;
-    background-image: url(https://st4.depositphotos.com/5927262/20739/i/600/depositphotos_207396570-stock-photo-happy-summer-time-freelancer-travel.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100vh;
-
-}
 
 
 
 
 
 #profilePicture {
-    width: 7rem;
-    height: 7rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 5rem;
 }
 
@@ -118,11 +226,11 @@
 }
 
 
-.DPIcon {
+#addDP {
     width: 2rem;
     height: 2rem;
     border-radius: 01rem;
-    border: 1px solid blue;
+    border: 1px solid rgb(98, 98, 136);
     background-color: white;
     cursor: pointer;
     color: rgb(88, 119, 234);
@@ -132,9 +240,31 @@
 
 }
 
+/* label {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    color: #8da4f1;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 16px;
+   justify-content: flex-end;
+} */
+
+span {
+  font-size: 10px;
+  color: black;
+}
+
+img {
+    width: 38px;
+    border-radius: 19px;
+}
+
 .eachInputBox {
     margin: 0.5rem;
 }
+
 
 
 .eachInputBox {
@@ -147,6 +277,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 3px;
 }
 
 
@@ -165,18 +296,7 @@
 }
 
 
-.left h2 {
-    color: #000000;
-    font-family: monospace;
-    overflow: hidden;
-    border-right: .15rem solid orange;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15rem;
-    animation:
-        typing 3.5s steps(30, end),
-        blink-caret .5s step-end infinite;
-}
+
 
 
 @keyframes typing {
@@ -200,3 +320,104 @@
         border-color: orange
     }
 }
+
+/*.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/estate3.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    height: 67.5vh;
+    width: 27.5vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+}
+
+form>input {
+    width: 50%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+
+form>label {
+    align-self: center;
+    width: 50%;
+    cursor: pointer;
+    transition: 150ms all;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+form>label:hover {
+    color: #444;
+}
+
+form>button {
+    outline: none;
+    background-color: blue;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.5rem 1.25rem;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+form>button:hover {
+    background-color: #fff;
+    border-color: blue;
+    color: blue;
+}
+
+form>p {
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form>p>a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+.error {
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #f00;
+    color: #fff;
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    font-weight: 500;
+}*/

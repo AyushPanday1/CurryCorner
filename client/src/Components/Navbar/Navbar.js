@@ -36,13 +36,13 @@ function Navbar() {
             <nav className="navbar navbar-expand-lg">
                 <a href="/home">
                     <div className="navbarIcons">
-                        <img className='nav-logo' src="https://i.pinimg.com/originals/b1/fc/bb/b1fcbbfd4fb8116c714ef352bb39bbaf.jpg" alt="img" />
-                        <span id='logo'>OniFood</span>
+                        <img className='nav-logo' src="https://th.bing.com/th/id/OIP.GyWqMDYf4DCTJM4aOY5oIgHaHa?pid=ImgDet&rs=1" alt="img" />
+                        <span id='logo'>CurryCorner</span>
 
                     </div>
                 </a>
                 <form className="d-flex" id='navbarNav' role="search">
-                    <input className="form-control me-2" type="search" placeholder={"📍"+userData.userId.address.city} aria-label="Search" value={searchName} onChange={(e) => setSearchName(e.target.value)} />
+                    <input className="form-control me-2" type="search" placeholder={"📍"} aria-label="Search" value={searchName} onChange={(e) => setSearchName(e.target.value)} />
                     <button className="btn btn-outline-success" onClick={searchItems} type="submit" >Search</button>
                 </form>
                 <div id="navbarDP">

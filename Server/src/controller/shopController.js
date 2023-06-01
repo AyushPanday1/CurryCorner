@@ -8,7 +8,7 @@ const createShop = async function (req, res) {
 
         data.pic = await uploadFile(files[0])
 
-        if (!data.address) { return res.status(400).send({ status: false, message: "Please enter address !" }) }
+        //if (!data.address) { return res.status(400).send({ status: false, message: "Please enter address !" }) }
 
         let shopEmail = await shopMode.findOne({ email: data.email })
         if (shopEmail) { return res.status(400).send({ status: false, message: "Email alreday exits" }) }
@@ -21,8 +21,8 @@ const createShop = async function (req, res) {
             if (!pincode || !/^[0-9]{6}$/.test(pincode)) { return res.status(400).send({ status: false, message: "Please enter shipping pincode & should be valid !" }) }
         }
 
-        let restourant = await shopMode.create(data)
-        res.status(201).send({ status: true, data: restourant })
+        let restaurant = await shopMode.create(data)
+        res.status(201).send({ status: true, data: restaurant })
     }
     catch (e) {
         res.status(500).send({ status: false, data: e.message })

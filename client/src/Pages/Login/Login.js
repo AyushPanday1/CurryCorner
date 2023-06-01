@@ -34,7 +34,7 @@ function Login() {
 					<div className="user_card">
 						<div className="d-flex justify-content-center">
 							<div className="brand_logo_container">
-								<img src="https://i.pinimg.com/originals/b1/fc/bb/b1fcbbfd4fb8116c714ef352bb39bbaf.jpg" className="brand_logo" alt="Logo" />
+								<img src="https://th.bing.com/th/id/OIP.GyWqMDYf4DCTJM4aOY5oIgHaHa?pid=ImgDet&rs=1" className="brand_logo" alt="Logo" />
 							</div>
 						</div>
 						<div className="d-flex justify-content-center form_container">

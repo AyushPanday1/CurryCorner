@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import Chat from "../../Components/Chat/Chat";
 import "./About.css"
 import Navbar from "../../Components/Navbar/Navbar";
-
+import Footer from '../../Components/footer/footer'
 function About() {
   const [state] = useState({
     title: "Hello everyone",
@@ -15,7 +15,8 @@ function About() {
 
     <>
       <Navbar />
-      <Chat />
+      <Footer />
+      {/* <Chat />
 
       <div className="home">
 
@@ -46,7 +47,7 @@ function About() {
 
         <div className="pic-part">
           <div>
-            <img src="Deeptirtha.jpeg" alt="" className="pro-img" />
+            <img src="" alt="" className="pro-img" />
             <h3 className="tex deep">Deeptirtha Mukherjee</h3>
             <div className="ico">
               <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox"><i class="fa-regular fa-envelope"></i></a>
@@ -58,18 +59,10 @@ function About() {
 
           </div>
 
-          <div>
-            <img src="aman.png" alt="" className="pro-img" />
-            <h3 className="tex aman">Aman Prajapat</h3>
-            <div className="ico">
-              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#sent?compose=GTvVlcSBmlxrdltbdcsgPXTFglmhWDMwSjzMjsfNvhLpCmNgMBbLFzxgCwzDKxffvdPRvlrLLLvbW"><i class="fa-regular fa-envelope"></i></a>
-              <a href="https://www.linkedin.com/in/aman-prajapat-249a53225"><i className="fa-brands fa-linkedin-in ic-chnage" /></a>
-              <a href="https://instagram.com/amanprajapat08278?igshid=ZDdkNTZiNTM="><i className="fa-brands fa-instagram  ic-chnage" /></a>
-              <a href="https://chat.whatsapp.com/JIZN0tnffpKCFBMfQ2QScU"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
+
           </div>
         </div>
-      </div>
+     */}
     </>
   );
 }

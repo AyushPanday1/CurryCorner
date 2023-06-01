@@ -8,7 +8,7 @@ const recipiSchema = new Schema(
             ref: "User"
         },
         image: String,
-        video: String
+       
     }
 )
 

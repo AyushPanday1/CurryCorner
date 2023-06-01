@@ -16,8 +16,8 @@ const createRecipi = async (req, res) => {
 
         if (files.length !== 2) { return res.status.send({ status: false, msg: "you have to send only 2 files" }) }
 
-        data.image = await uploadFile(files[0])
-        data.video = await uploadFile(files[1])
+      //  data.image = await uploadFile(files[0])
+       // data.video = await uploadFile(files[1])
 
         let result = await recipiModel.create(data)
 

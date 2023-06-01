@@ -1,0 +1,19 @@
+{
+  "name": "currycorner",
+  "version": "1.0.0",
+  "description": "*OniFood (Food delivery application)*",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyushPanday1/CurryCorner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AyushPanday1/CurryCorner/issues"
+  },
+  "homepage": "https://github.com/AyushPanday1/CurryCorner#readme"
+}

@@ -6,6 +6,8 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { useState, useEffect } from "react";
 import CartItem from "../../Components/Cart/CartItemCard";
 
+import Footer from '../../Components/footer/footer'
+
 function Cart() {
   let userData = JSON.parse(localStorage.getItem("user"));
 
@@ -45,7 +47,7 @@ function Cart() {
     <div>
       <Navbar />
       <Chat />
-
+      
       <div className="cart-de">
         <CartItem item={item} cartId={Cart._id} />
 
@@ -68,6 +70,10 @@ function Cart() {
         </button>
       </div>
     </div>
+   
+ 
+  
+    
   );
 }
 
