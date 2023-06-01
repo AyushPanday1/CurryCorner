@@ -1,4 +1,4 @@
-*OniFood (Food delivery application)*
+*CurryCorner (Food delivery application)*
 
 1. User can resister by giving his/her credentials (name, email. profile image, password, address, mobile number, etc.). If user account create sucessfully then user directly redirect to login page.
 
