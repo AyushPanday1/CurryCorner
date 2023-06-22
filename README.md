@@ -1,4 +1,7 @@
-*CurryCorner (Food delivery application)*
+### CurryCorner (Food delivery application)
+## Tech-stack : MERN
+
+<img alt='coding' src='https://th.bing.com/th/id/OIP.QilAJ_a7rJEcQuoH7V1IiQHaE8?pid=ImgDet&rs=1' />
 
 1. User can resister by giving his/her credentials (name, email. profile image, password, address, mobile number, etc.). If user account create sucessfully then user directly redirect to login page.
 
