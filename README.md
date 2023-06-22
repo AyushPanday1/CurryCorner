@@ -1,5 +1,5 @@
-### CurryCorner (Food delivery application)
-## Tech-stack : MERN
+## CurryCorner (Food delivery application)
+### Tech-stack : MERN
 
 <img alt='coding' src='https://th.bing.com/th/id/OIP.QilAJ_a7rJEcQuoH7V1IiQHaE8?pid=ImgDet&rs=1' />
 
