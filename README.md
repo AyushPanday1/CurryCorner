@@ -2,7 +2,7 @@
 
 Welcome to CurryCorner! 🍽️ Your one-stop destination for experiencing delightful flavors at your doorstep. This FullStack application is built with the MERN (MongoDB, Express.js, React, Node.js) stack, providing users with the convenience of exploring a diverse menu and ordering their favorite dishes for delivery.
 
-**🚀 Explore the[CurryCorner Website](https://currycorner.vercel.app/) and indulge in a culinary journey today!**
+**🚀 Explore the [CurryCorner Website](https://currycorner.vercel.app/) and indulge in a culinary journey today!**
 
 ## Table of Contents
 
