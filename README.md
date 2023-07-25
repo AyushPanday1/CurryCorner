@@ -1,200 +1,113 @@
-## CurryCorner (Food delivery application)
-### Tech-stack : MERN
+# CurryCorner - Food Delivery FullStack App 🍛🚀
 
-<img alt='coding' src='https://th.bing.com/th/id/OIP.QilAJ_a7rJEcQuoH7V1IiQHaE8?pid=ImgDet&rs=1' />
+Welcome to CurryCorner! 🍽️ Your one-stop destination for experiencing delightful flavors at your doorstep. This FullStack application is built with the MERN (MongoDB, Express.js, React, Node.js) stack, providing users with the convenience of exploring a diverse menu and ordering their favorite dishes for delivery.
 
-1. User can resister by giving his/her credentials (name, email. profile image, password, address, mobile number, etc.). If user account create sucessfully then user directly redirect to login page.
+**🚀 Explore the CurryCorner app and indulge in a culinary journey today!**
 
-2. User have to enter email and password for login. After login sucessfully user directly redirect to home page.
+## Table of Contents
 
-3.Home page contain navbar from which user can search his favourite food form any restorent.  and it has a side slider which will redirect user into different pages. 
+- [Key Features](#key-features)
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [API](#Api-developed)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-4. Home page contain two carousel and all food shop after clicking on a particular shop user redirect to shop page where user see the foods of that shop.
+## Key Features
 
-5.Inside shop page it has 2 option review and product user can add product into his/her cart and can also give shop review and can delete his/her own comment.
+- 🍛 Extensive Menu: A wide range of authentic curries and cuisines to choose from.
+- 🛒 Seamless Ordering: Effortless ordering with just a few clicks.
+- 🌟 User Reviews: Read and leave reviews to share your culinary experiences.
+- 👥 Signup and Signin: User authentication and authorization for personalized experiences.
 
-6.Form slider user can go into cat and can manupulate order quantity and buy.
+## Demo
 
-7.if user have his shop he can add product from side slider otherwise can add shop it is conditional. (user see only one button add shop/add product based on condition)
+Check out the live demo of CurryCorner: [CurryCorner Demo](https://currycorner.vercel.app/)
 
-8.this application also contain a video render page it is chef,s special ,three user can watch videos and also can add his own.
+## Technologies Used
 
-9.application has its own chat bot,about section contain Developers data,and logout is also integrated into the application.
+CurryCorner is developed using the following technologies:
 
+- **Frontend:**
+  - React.js - A powerful JavaScript library for building user interfaces.
+  - Redux - A state management library for managing application state.
+  - HTML/CSS - For creating responsive and visually appealing designs.
+  - Axios - A popular HTTP client for making API requests.
 
-=> Models
+- **Backend:**
+  - Node.js - A JavaScript runtime for building scalable server-side applications.
+  - Express.js - A minimalist web application framework for Node.js.
+  - MongoDB - A NoSQL database for storing and managing application data.
+  - Mongoose - An elegant MongoDB object modeling tool.
 
-1.User Model :
-```yaml
-{
-    name: { type: String, require: true },
-    email: { type: String, require: true, unique: true },
-    image: { type: String, require: true },
-    phone: { type: String, require: true, unique: true },
-    password: { type: String, require: true },
-    profileImage:String,
-    address: {
-        street: { type: String, trim: true },
-        city: { type: String, trim: true },
-        pincode: { type: Number, require: true, trim: true }
-    }
-}
-```
-2.Shop Model :
-```yaml
-{
-    name: { type: String, required: true },
-    email: { type: String },
-    contactNo: { type: String },
-    address: {
-        street: { type: String, trim: true },
-        city: { type: String, trim: true },
-        pincode: { type: Number, require: true, trim: true }
-    },
-    rating: { type: Number },
-    pic: { type: String }
-}
-```
-3.Cart Model : 
-```yaml
-    {
-        userId:{
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"User",
-        },
-        items:[
-            {
-                productId:{
-                    type:mongoose.Schema.Types.ObjectId,
-                    ref:"Product"
-                },
-                quantity:Number,
-                productImg:String,
-                productName:String,
+## API development:
 
-            }
-        ],
-        totalPrice:Number,
-        totalItems:Number
-    }
-    
-```
+CurryCorner is made from various ORM models and with different API's that allow CurryCorner to perfrom CRUD operations elegantly.
 
-4. Order Model : 
+## Installation :
 
-```yaml
-{
-    userId: { type: ObjectId, ref: "User", require: true },
-  items: [{
-    productId: { type: ObjectId, ref: "Product", require: true },
-    quantity: { type: Number, require: true }
-  }],
-  totalPrice: { type: Number, require: true },
-  totalItems: { type: Number, require: true },
-  totalQuantity: { type: Number, require: true },
-  cancellable: { type: Boolean, default: true },
-  status: { type: String, default: 'pending', enum: ["pending", "completed", "canceled"], trim: true },
-  deletedAt: { type: Date },
-  isDeleted: { type: Boolean, default: false }
-}
-```
+To run CurryCorner locally, follow these steps:
 
-5. Comment Model : 
-```yaml
-{
-    name: {
-        type: String,
-        required: true,
-    },
-    shopId: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: String,
-        required: true
-    },
-    isDeleted: { type: Boolean, default: false },
-    comments: {
-        type: String,
-        required: true
-    }
-}
-```
-6. Recipe Model : 
-```yaml
-{
-    title: String,
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-    },
-    image: String,
-    video: String
-}
+1. **Clone the repository:**
 
-```
-APIs :
+   ```bash
+   git clone https://github.com/yourusername/currycorner.git
 
-//====================== User Api =========================//
+2. **Navigate the project folder:**
+- cd currycorner
+- cd frontend
+- npm install
+- cd ../backend
+- npm install
 
-router.post("/user", createUser)
+3. **Start the project:**
 
-router.post("/loginUser", loginUser)
+ Command npm start for front-end and npx nodemon index.js for backend
 
-router.get("/user/:userId", getUser)
+## Usage
 
-router.put("/user/:userId", updateUser)
+CurryCorner provides a user-friendly interface for exploring a variety of dishes, placing orders, and reviewing your favorite meals. Here's how to get started:
 
-//===================== Shop APIs ==========================//
+1. **Signup or Signin:**
+   Create an account or sign in to access personalized features, such as saved preferences and order history.
 
-router.post("/shop", createShop)
+2. **Explore the Menu:**
+   Browse through the extensive menu of curries and cuisines, along with detailed descriptions and mouthwatering images.
 
-router.put("/shop/:shopId", UpdateeShop)
+3. **Place an Order:**
+   Select your desired dishes, customize your order, and proceed to checkout. Secure payment options ensure a smooth transaction.
 
-router.get("/shop", getShop)
+4. **User Profile:**
+   Manage your profile settings, view your order history, and update preferences for a personalized experience.
+
+## API Documentation
+
+For API documentation and available endpoints, refer to the [CurryCorner API Documentation]Backend.
+
+## Contributing
+
+We welcome contributions from the community! Whether it's fixing bugs, adding new features, or improving the user interface, anyone can participate in making CurryCorner even better.
 
 
-//===================== Product APIs ==========================//
+## License
 
-router.post("/product", createProduct)
+Craft-CV is licensed under the [MIT License](./LICENSE).
 
-router.put("/product/:productId", updateProuct)
+## Contact
 
-router.get("/product", getProduct)
+If you have any questions or feedback, feel free to reach out:
 
-router.get("/product/:shopId", getProductbyShopId)
-
-
-//===================== Card APIs ==========================//
-
-router.post("/users/:userId/cart", createCart)
-
-router.put("/users/:userId/cart", updateCart)
-
-router.get("/users/:userId/cart", getCart)
-
-router.delete("/users/:userId/cart", deleteCart)
+- Email: ayush7426883261@gmail.com
+- LinkedIn : https://www.linkedin.com/in/ayush-panday-799b3120b/
+- GitHub:(https://github.com/AyushPanday1)
 
 
-//===================== Order APIs ==========================//
+## Happy Coding!
+© 2023 Ayush Panday
 
-router.post("/users/:userId/orders", createOrder)
-
-router.put("/users/:userId/orders", updateOrder)
-
-//==================== comment =============================//
-
-router.post("/comment/:shopId", newComment)
-
-router.get("/comment/:shopId", getComments)
-
-router.put("/comment/:commentId", deleteComment)
-
-
-//===========================Recipi===========================//
-
-router.post("/recipi", createRecipi)
-
-router.get("/recipi", getRecipi)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
