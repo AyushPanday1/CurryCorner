@@ -26,7 +26,7 @@ Welcome to CurryCorner! 🍽️ Your one-stop destination for experiencing delig
 
 ## Demo
 
-Check out the live demo of CurryCorner: [CurryCorner Demo](https://currycorner.vercel.app/)
+Check out the live demo of CurryCorner: [Live](https://currycorner.vercel.app/)
 
 ## Technologies Used
 
